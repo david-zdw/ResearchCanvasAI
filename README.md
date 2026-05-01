@@ -1,116 +1,117 @@
-# Research Canvas AI
+# Research Canvas AI 科研 AI 画板
 
-Research Canvas AI is a local-first prototype for reading papers, turning them into scientific figure prompts, generating images with an OpenAI-compatible image API, and arranging results on an infinite canvas.
+Research Canvas AI 是一个本地运行的科研绘图画板软件。它把“论文阅读、提示词生成、AI 生图、图像编辑、高清放大、矢量化、节点式工作流”放在一个无限画布里，适合用来制作论文图、机制示意图、图形摘要和科研汇报插图。
 
-The app is intentionally built with a small Python standard-library backend and a plain HTML/CSS/JS frontend so it is approachable for beginners and easy to run with `uv`.
+项目采用轻量的 Python 后端和原生 HTML/CSS/JS 前端，Windows 下可以双击脚本一键启动。
 
-## What is included
+## 主要功能
 
-- Paper reading for `.pdf`, `.txt`, `.md`, and `.docx` files.
-- Paper-aware prompt generation with an API-backed path and an offline fallback.
-- Scientific image generation through an OpenAI-compatible `/v1/images/generations` endpoint.
-- Image edit, local repaint, upscale, bitmap-to-SVG, and quick relayout API endpoints.
-- Infinite canvas with pan, zoom, draggable cards, text notes, generated figures, and exportable SVG wrappers.
+- 论文读取：支持上传 PDF、TXT、Markdown、DOCX，并提取摘要、关键词和图注候选内容。
+- 提示词生成：根据论文内容、绘图目标、图类型和视觉风格生成科研绘图提示词。
+- 文生图：通过 OpenAI 兼容的 `/v1/images/generations` 接口调用 `gpt-image-2` 等图像模型。
+- 图生图：支持上传一张或多张参考图，通过 `/v1/images/edits` 生成修改后的科研图。
+- 节点画布：文生图、图生图、提示词、上传图片、反推提示词等都可以作为节点连接。
+- 多图并发：选择生成多张图时，会先创建多个“生成中”节点，每张图完成后单独替换。
+- 局部截图与重绘：可以框选图片局部作为新的图像来源，也可以绘制蒙版进行局部重绘。
+- 高清放大：集成 Upscayl 后端，可对图片进行本地放大。
+- 位图转矢量：集成 VTracer，用于将位图转换为 SVG。
+- 提示词预设：内置科研绘图提示词库，支持分类、保存和复用。
+- 工作流保存：画布工程可以保存，方便重启后继续编辑。
 
-## One-click Start
+## 一键启动
 
-On Windows, double-click:
+Windows 下双击：
 
 ```text
 Start Research Canvas AI.bat
 ```
 
-This starts the local server in the background and opens:
+启动后会自动打开：
 
 ```text
 http://127.0.0.1:8765
 ```
 
-To stop the background server, double-click:
+停止后台服务请双击：
 
 ```text
 Stop Research Canvas AI.bat
 ```
 
-Logs are written to:
+## API 配置
+
+进入软件后，点击左上角设置按钮，在 API 设置页填写：
+
+- API Base URL
+- API Key
+- 文本模型
+- 图像模型
+- 可选模型列表
+
+配置会保存在本地 `.env` 文件中。`.env` 已被 `.gitignore` 忽略，不会上传到 GitHub。
+
+也可以参考 `.env.example` 手动创建 `.env`：
 
 ```text
-data/logs/server.out.log
-data/logs/server.err.log
+OPENAI_API_KEY=
+OPENAI_BASE_URL=https://api.openai.com
+TEXT_MODEL=gpt-4.1-mini
+IMAGE_MODEL=gpt-image-2
+SERVER_HOST=127.0.0.1
+SERVER_PORT=8765
 ```
 
-## Portable Package
+## 打包发布
 
-To build a portable folder and zip file, double-click:
+双击：
 
 ```text
 Build Portable Package.bat
 ```
 
-The package is created at:
+会生成：
 
 ```text
 dist/ResearchCanvasAI
 dist/ResearchCanvasAI-portable.zip
 ```
 
-For safety, `.env` and existing `data/` work history are not included in the package. This avoids accidentally sharing API keys or private projects.
+安全说明：
 
-## Developer Run
+- 打包不会包含 `.env`，避免泄露 API Key。
+- 打包不会包含日志、上传论文、历史生成图片和私人工作流。
+- 打包会保留内置提示词预设。
 
-```powershell
-& 'D:\日常工具\uv\uv-x86_64-pc-windows-msvc\uv.exe' run python server.py
-```
+## 数据保存位置
 
-Open:
-
-```text
-http://127.0.0.1:8765
-```
-
-## Configure APIs
-
-Click the gear button in the top-left of the app to open the API settings panel. Settings are saved to `.env` and take effect immediately in the running server.
-
-You can also create a `.env` file from `.env.example`, or set environment variables in PowerShell before starting:
-
-```powershell
-$env:OPENAI_API_KEY="your-key"
-$env:OPENAI_BASE_URL="https://api.openai.com"
-$env:TEXT_MODEL="gpt-4.1-mini"
-$env:IMAGE_MODEL="gpt-image-2"
-```
-
-Notes:
-
-- `IMAGE_MODEL` is configurable because providers may expose `gpt-image-2` through compatible APIs before or outside the official OpenAI API.
-- If your OpenAI account only exposes official public image models, set `IMAGE_MODEL` to an available model such as `gpt-image-1.5` or `gpt-image-1`.
-- Without an API key, paper reading and prompt generation still work with local fallbacks; image operations return transparent placeholders so the canvas flow remains testable.
-
-## Architecture
+本地运行时，数据默认保存在：
 
 ```text
-browser
-  static/index.html
-  static/styles.css
-  static/app.js
-      |
-      v
-Python HTTP server
-  app/server.py
-  app/api.py
-      |
-      +-- app/services/paper_reader.py
-      +-- app/services/prompting.py
-      +-- app/services/image_provider.py
-      +-- app/services/canvas_ops.py
-      +-- app/store.py
+data/
 ```
 
-## Recommended next build steps
+其中包括：
 
-1. Add persistent project files so every canvas can be reopened.
-2. Replace the lightweight PDF extraction fallback with `pypdf` or `PyMuPDF` when dependencies are available.
-3. Add a real vectorization worker such as Potrace or a hosted vectorization API.
-4. Add mask drawing on the canvas for production-grade local repaint.
-5. Add account-level cost tracking and generation history.
+- `data/state.json`：提示词预设、工程、图片记录等状态数据。
+- `data/assets/`：生成图、上传图、矢量图等资源。
+- `data/uploads/`：上传的论文或图片。
+- `data/logs/`：运行日志和接口调试日志。
+
+这些本地数据默认不提交到 GitHub。
+
+## 项目结构
+
+```text
+app/        Python 后端接口与服务逻辑
+static/     前端页面、样式和画布交互
+scripts/    启动、停止、检查和打包脚本
+tools/      Upscayl、VTracer 等本地工具
+server.py   服务入口
+```
+
+## 注意事项
+
+- 本项目是本地优先工具，适合个人科研绘图工作流。
+- 使用第三方 API 时，请自行确认模型名称、接口地址、价格和速率限制。
+- 4K 图片生成通常耗时更长、费用更高，建议必要时再使用。
+- 生成结果请结合科研事实人工检查，避免误导性图示。
