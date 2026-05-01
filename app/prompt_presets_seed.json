@@ -1,0 +1,1578 @@
+{
+  "prompt_presets": {
+    "preset_schematic": {
+      "id": "preset_schematic",
+      "name": "Clean scientific schematic",
+      "prompt": "Nature-style clean vector-like scientific illustration, white background, balanced multi-panel layout, restrained teal and amber palette, consistent line weights, legible labels, clear arrows, no decorative stock-art elements.",
+      "created_at": "2026-04-27T16:50:02.128635+00:00",
+      "updated_at": "2026-04-27T16:50:02.128635+00:00",
+      "category": "模板",
+      "reference_image": "",
+      "keywords": []
+    },
+    "preset_graphical_abstract": {
+      "id": "preset_graphical_abstract",
+      "name": "Graphical abstract",
+      "prompt": "Cell journal graphical abstract style, central mechanism highlighted, left-to-right causal flow, clear hierarchy, minimal text, precise scientific icons, soft shadows only where they improve separation, publication-ready composition.",
+      "created_at": "2026-04-27T16:50:02.128635+00:00",
+      "updated_at": "2026-04-27T16:50:02.128635+00:00",
+      "category": "模板",
+      "reference_image": "",
+      "keywords": []
+    },
+    "preset_1359cc6d71d2": {
+      "id": "preset_1359cc6d71d2",
+      "name": "通用提示词模版",
+      "prompt": "生成一张科研图形摘要 / 机制图。主题：[研究主题]。画面包含：[关键细胞/器官/材料/模型]，[核心分子或通路]，[实验处理或干预]，[最终表型或结论]。\n布局要求：左侧展示研究背景或疾病模型，中间展示关键机制与信号通路，右侧展示结果或治疗效果；使用清晰箭头、标签、分区标题和图例。\n视觉风格：可发表级 scientific illustration，干净白色或浅色背景，统一配色，矢量信息图与轻量 3D 质感结合，高分辨率，文字清晰，适合论文图形摘要。",
+      "created_at": "2026-05-01T00:46:08.385752+00:00",
+      "updated_at": "2026-05-01T00:46:08.385752+00:00",
+      "category": "未分类",
+      "reference_image": "",
+      "keywords": []
+    },
+    "preset_template_general": {
+      "id": "preset_template_general",
+      "category": "模板",
+      "name": "通用提示词模板",
+      "prompt": "生成一张科研图形摘要 / 机制图。主题：[研究主题]。画面包含：[关键细胞/器官/材料/模型]，[核心分子或通路]，[实验处理或干预]，[最终表型或结论]。\n布局要求：左侧展示研究背景或疾病模型，中间展示关键机制与信号通路，右侧展示结果或治疗效果；使用清晰箭头、标签、分区标题和图例。\n视觉风格：可发表级 scientific illustration，干净白色或浅色背景，统一配色，矢量信息图与轻量 3D 质感结合，高分辨率，文字清晰，适合论文图形摘要。",
+      "reference_image": "",
+      "keywords": [],
+      "source": "library",
+      "source_index": 0,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_1973b909c69e": {
+      "id": "preset_1973b909c69e",
+      "category": "机制图解",
+      "name": "创建一个全面的肿瘤学图示，展示 G-Rh2 负载水凝胶与 PD-1 抗体的联合治疗策略，采用癌症免疫治疗期刊风格",
+      "prompt": "请生成一张机制图解方向的科研绘图，主题围绕：创建一个全面的肿瘤学图示，展示 G-Rh2 负载水凝胶与 PD-1 抗体的联合治疗策略，采用癌症免疫治疗期刊风格。重点表现关键词：G-Rh2、PD-1、FFB6C1、ICG-HPC-AA/BSA、FFD700、FF8C00、CD3、DC143C。画面采用现代机制图解、图形摘要、清晰箭头、模块化分区、期刊插图质感。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251126/b27cb5731523285fee5b2d953beb5adc.png",
+      "keywords": [
+        "G-Rh2",
+        "PD-1",
+        "FFB6C1",
+        "ICG-HPC-AA",
+        "BSA",
+        "FFD700",
+        "FF8C00",
+        "CD3",
+        "DC143C"
+      ],
+      "source": "library",
+      "source_index": 16,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_48381ca64ffa": {
+      "id": "preset_48381ca64ffa",
+      "category": "机制图解",
+      "name": "创建一个全面的细胞死亡生物学图示，展示铁死亡信号通路机制，采用《自然细胞死亡》期刊的风格",
+      "prompt": "请生成一张机制图解方向的科研绘图，主题围绕：创建一个全面的细胞死亡生物学图示，展示铁死亡信号通路机制，采用《自然细胞死亡》期刊的风格。重点表现关键词：PE-AA、TFR1、Fe3、LIP、Fe2、FTH1/FTL、FPN、FFD700。画面采用现代机制图解、图形摘要、清晰箭头、模块化分区、期刊插图质感。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251126/ac53ad2895e0779e574958a7b4f830e3.png",
+      "keywords": [
+        "PE-AA",
+        "TFR1",
+        "Fe3",
+        "LIP",
+        "Fe2",
+        "FTH1",
+        "FTL",
+        "FPN",
+        "FFD700"
+      ],
+      "source": "library",
+      "source_index": 17,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_67af2ddf39a4": {
+      "id": "preset_67af2ddf39a4",
+      "category": "机制图解",
+      "name": "创建一幅全面的细胞生物学图示，展示线粒体自噬（mitophagy）过程和溶酶体清除机制，采用《自然细胞生物学》期刊风格",
+      "prompt": "请生成一张机制图解方向的科研绘图，主题围绕：创建一幅全面的细胞生物学图示，展示线粒体自噬（mitophagy）过程和溶酶体清除机制，采用《自然细胞生物学》期刊风格。重点表现关键词：F8F8FF、DC143C、Drp1、GDP/GTP、SUMO、FF69B4、PINK1-PARKIN、PINK1。画面采用现代机制图解、图形摘要、清晰箭头、模块化分区、期刊插图质感。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251126/aefc1cfcd9a570543fe7a4c63670e477.png",
+      "keywords": [
+        "F8F8FF",
+        "DC143C",
+        "Drp1",
+        "GDP",
+        "GTP",
+        "SUMO",
+        "FF69B4",
+        "PINK1-PARKIN",
+        "PINK1"
+      ],
+      "source": "library",
+      "source_index": 18,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_5dbdffcaed6c": {
+      "id": "preset_5dbdffcaed6c",
+      "category": "机制图解",
+      "name": "创建一个全面的医学病理学图示，以临床期刊风格展示幽门螺杆菌的致病机制",
+      "prompt": "请生成一张机制图解方向的科研绘图，主题围绕：创建一个全面的医学病理学图示，以临床期刊风格展示幽门螺杆菌的致病机制。重点表现关键词：F5E6D3、F8BBD0、E3F2FD、DC143C、PMN、IgG、IgA、IL-8。画面采用现代机制图解、图形摘要、清晰箭头、模块化分区、期刊插图质感。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251126/d540edf1dd7061f0ebd22097aa31accf.png",
+      "keywords": [
+        "F5E6D3",
+        "F8BBD0",
+        "E3F2FD",
+        "DC143C",
+        "PMN",
+        "IgG",
+        "IgA",
+        "IL-8"
+      ],
+      "source": "library",
+      "source_index": 19,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_d8e5d202e312": {
+      "id": "preset_d8e5d202e312",
+      "category": "机制图解",
+      "name": "创建一个全面的免疫学图示，展示微生物与先天免疫系统的相互作用以及免疫细胞重编程（训练有素的免疫力），并以高影响力期刊的风格呈现",
+      "prompt": "请生成一张机制图解方向的科研绘图，主题围绕：创建一个全面的免疫学图示，展示微生物与先天免疫系统的相互作用以及免疫细胞重编程（训练有素的免疫力），并以高影响力期刊的风格呈现。重点表现关键词：DDA0DD、DC143C、PRR、Caspase-1、FF69B4、NF-、ATP/、IL-6。画面采用现代机制图解、图形摘要、清晰箭头、模块化分区、期刊插图质感。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251126/8fa502245742c52a0e7c540b105a5cda.png",
+      "keywords": [
+        "DDA0DD",
+        "DC143C",
+        "PRR",
+        "Caspase-1",
+        "FF69B4",
+        "NF-",
+        "ATP",
+        "IL-6"
+      ],
+      "source": "library",
+      "source_index": 20,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_706a434f95f2": {
+      "id": "preset_706a434f95f2",
+      "category": "机制图解",
+      "name": "创建全面的免疫学图示，展示革兰氏阳性菌激活炎症小体的过程，高影响力期刊风格，适用于《自然免疫学》或《细胞》",
+      "prompt": "请生成一张机制图解方向的科研绘图，主题围绕：创建全面的免疫学图示，展示革兰氏阳性菌激活炎症小体的过程，高影响力期刊风格，适用于《自然免疫学》或《细胞》。重点表现关键词：PAMP、PFT、LTA、F97316、DNA、TLR、P2X5、FCD34D。画面采用现代机制图解、图形摘要、清晰箭头、模块化分区、期刊插图质感。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251126/cb78b0489be786fd6b5455a21b09989c.png",
+      "keywords": [
+        "PAMP",
+        "PFT",
+        "LTA",
+        "F97316",
+        "DNA",
+        "TLR",
+        "P2X5",
+        "FCD34D"
+      ],
+      "source": "library",
+      "source_index": 21,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_811c5f4b6851": {
+      "id": "preset_811c5f4b6851",
+      "category": "机制图解",
+      "name": "创建一个全面的生物技术插图，展示用于疫苗抗原递送和呈递的先进细菌策略，采用现代疫苗开发期刊风格",
+      "prompt": "请生成一张机制图解方向的科研绘图，主题围绕：创建一个全面的生物技术插图，展示用于疫苗抗原递送和呈递的先进细菌策略，采用现代疫苗开发期刊风格。重点表现关键词：FF6347、FF8C00、FFD700、MHC、CD4、CD8、GALT、IgA。画面采用现代机制图解、图形摘要、清晰箭头、模块化分区、期刊插图质感。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251126/00119cd8b001ca381ceada6d8eb8d5b0.png",
+      "keywords": [
+        "FF6347",
+        "FF8C00",
+        "FFD700",
+        "MHC",
+        "CD4",
+        "CD8",
+        "GALT",
+        "IgA"
+      ],
+      "source": "library",
+      "source_index": 22,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_926ad5351750": {
+      "id": "preset_926ad5351750",
+      "category": "机制图解",
+      "name": "创建一个全面的医学图示，展示肠道菌群衍生的三甲胺氧化物 (TMAO) 代谢及其对心血管的影响，采用临床病理生理学期刊风格",
+      "prompt": "请生成一张机制图解方向的科研绘图，主题围绕：创建一个全面的医学图示，展示肠道菌群衍生的三甲胺氧化物 (TMAO) 代谢及其对心血管的影响，采用临床病理生理学期刊风格。重点表现关键词：TMAO、F4A460、DC143C、FF8C00、FMO3、TMA、Ang、FFB6C1。画面采用现代机制图解、图形摘要、清晰箭头、模块化分区、期刊插图质感。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251126/b0cde9cc68d2db82800e2be90d173d24.png",
+      "keywords": [
+        "TMAO",
+        "F4A460",
+        "DC143C",
+        "FF8C00",
+        "FMO3",
+        "TMA",
+        "Ang",
+        "FFB6C1"
+      ],
+      "source": "library",
+      "source_index": 23,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_dee4250cd709": {
+      "id": "preset_dee4250cd709",
+      "category": "机制图解",
+      "name": "创建一个全面的医学图示，展示肠道菌群菌株的分布及其在菌群失调中对全身健康的影响，采用临床胃肠病学期刊的风格",
+      "prompt": "请生成一张机制图解方向的科研绘图，主题围绕：创建一个全面的医学图示，展示肠道菌群菌株的分布及其在菌群失调中对全身健康的影响，采用临床胃肠病学期刊的风格。重点表现关键词：F8BBD0、CFU/ml、IBS、DAA520、DC143C、TMAO、FFB6C1、FFD700。画面采用现代机制图解、图形摘要、清晰箭头、模块化分区、期刊插图质感。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251126/bf1db4753676fd49ba992494f3980cbb.png",
+      "keywords": [
+        "F8BBD0",
+        "CFU",
+        "ml",
+        "IBS",
+        "DAA520",
+        "DC143C",
+        "TMAO",
+        "FFB6C1",
+        "FFD700"
+      ],
+      "source": "library",
+      "source_index": 24,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_37a7f9e13ccb": {
+      "id": "preset_37a7f9e13ccb",
+      "category": "机制图解",
+      "name": "创建一个全面的细胞信号传导图示，展示生物分子凝聚物对 Wnt/β-catenin 信号通路的调控，采用《自然细胞生物学》期刊的风格",
+      "prompt": "请生成一张机制图解方向的科研绘图，主题围绕：创建一个全面的细胞信号传导图示，展示生物分子凝聚物对 Wnt/β-catenin 信号通路的调控，采用《自然细胞生物学》期刊的风格。重点表现关键词：Wnt/β-catenin、Wnt、WNT、FFFACD、Frizzled、CD853F、LRP5/6、FFD700。画面采用现代机制图解、图形摘要、清晰箭头、模块化分区、期刊插图质感。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251126/727b1c949d0999925d2d92b3273ded71.png",
+      "keywords": [
+        "Wnt",
+        "β-catenin",
+        "Wnt",
+        "WNT",
+        "FFFACD",
+        "Frizzled",
+        "CD853F",
+        "LRP5",
+        "6",
+        "FFD700"
+      ],
+      "source": "library",
+      "source_index": 25,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_1de6354131c1": {
+      "id": "preset_1de6354131c1",
+      "category": "机制图解",
+      "name": "创建一个全面的发育生物学图示，展示经典的 Wnt 和 Hedgehog (HH) 信号通路的开启/关闭状态，以《发育期刊》的风格呈现",
+      "prompt": "请生成一张机制图解方向的科研绘图，主题围绕：创建一个全面的发育生物学图示，展示经典的 Wnt 和 Hedgehog (HH) 信号通路的开启/关闭状态，以《发育期刊》的风格呈现。重点表现关键词：Wnt、Hedgehog、WNT、F0FFF0、FFA500、LRP5/6、FFB6C1、APC。画面采用现代机制图解、图形摘要、清晰箭头、模块化分区、期刊插图质感。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251126/e4ada64aa1a6170d67b78fc9d9248691.png",
+      "keywords": [
+        "Wnt",
+        "Hedgehog",
+        "WNT",
+        "F0FFF0",
+        "FFA500",
+        "LRP5",
+        "6",
+        "FFB6C1",
+        "APC"
+      ],
+      "source": "library",
+      "source_index": 26,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_f6f7e57be1e0": {
+      "id": "preset_f6f7e57be1e0",
+      "category": "机制图解",
+      "name": "“图示慢性病性贫血（也称为炎症性贫血）的机制：炎症引起的铁隔离过程",
+      "prompt": "请生成一张机制图解方向的科研绘图，主题围绕：“图示慢性病性贫血（也称为炎症性贫血）的机制：炎症引起的铁隔离过程。重点表现关键词：图示慢性病性贫血、也称为炎症性贫血、的机制、炎症引起的铁隔离过程、图中应展示由细胞因子、尤其是IL-6、刺激的铁调节激素、hepcidin。画面采用现代机制图解、图形摘要、清晰箭头、模块化分区、期刊插图质感。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251126/0619a08525c1fbea81883da3b908879a.png?t=1764128564517",
+      "keywords": [
+        "图示慢性病性贫血",
+        "也称为炎症性贫血",
+        "的机制",
+        "炎症引起的铁隔离过程",
+        "图中应展示由细胞因子",
+        "尤其是IL-6",
+        "刺激的铁调节激素",
+        "hepcidin"
+      ],
+      "source": "library",
+      "source_index": 27,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_dac24e84cc0b": {
+      "id": "preset_dac24e84cc0b",
+      "category": "机制图解",
+      "name": "“图示细菌感染中的铁（Fe）获取与隔离机制：展示病原体与宿主在铁竞争中的过程",
+      "prompt": "请生成一张机制图解方向的科研绘图，主题围绕：“图示细菌感染中的铁（Fe）获取与隔离机制：展示病原体与宿主在铁竞争中的过程。重点表现关键词：IL-。画面采用现代机制图解、图形摘要、清晰箭头、模块化分区、期刊插图质感。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251126/4f076f01b5e630fdaf51ba3d8e17b0cf.png?t=1764128999907",
+      "keywords": [
+        "IL-"
+      ],
+      "source": "library",
+      "source_index": 28,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_cdded26a9510": {
+      "id": "preset_cdded26a9510",
+      "category": "机制图解",
+      "name": "“图示HFE蛋白缺乏与炎症性贫血中的铁调节机制：展示一名C282Y纯合型遗传性血色病患者在变异型Schnitzler综合征的治疗过程中，血清铁调节激素hepci...",
+      "prompt": "请生成一张机制图解方向的科研绘图，主题围绕：“图示HFE蛋白缺乏与炎症性贫血中的铁调节机制：展示一名C282Y纯合型遗传性血色病患者在变异型Schnitzler综合征的治疗过程中，血清铁调节激素hepci...。重点表现关键词：IL-6。画面采用现代机制图解、图形摘要、清晰箭头、模块化分区、期刊插图质感。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251126/3a2513480b0258c295bb913a29070a18.png?t=1764129029973",
+      "keywords": [
+        "IL-6"
+      ],
+      "source": "library",
+      "source_index": 29,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_c21ffd95e363": {
+      "id": "preset_c21ffd95e363",
+      "category": "机制图解",
+      "name": "“图示IL-6在炎症性贫血中的作用，特别是对红细胞成熟和血红蛋白合成的影响：图中应展示人类红系白血病TF-1细胞在不同剂量IL-6作用下的变化",
+      "prompt": "请生成一张机制图解方向的科研绘图，主题围绕：“图示IL-6在炎症性贫血中的作用，特别是对红细胞成熟和血红蛋白合成的影响：图中应展示人类红系白血病TF-1细胞在不同剂量IL-6作用下的变化。重点表现关键词：IL-。画面采用现代机制图解、图形摘要、清晰箭头、模块化分区、期刊插图质感。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251126/34867e32062fe397acdb68de97a937f6.png",
+      "keywords": [
+        "IL-"
+      ],
+      "source": "library",
+      "source_index": 30,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_165dc1e080a8": {
+      "id": "preset_165dc1e080a8",
+      "category": "机制图解",
+      "name": "“图示在非洲锥虫病中的炎症性贫血机制以及GPI治疗的影响：图中应展示锥虫感染小鼠中，铁的稳态被破坏，导致铁在网状内皮系统的积累",
+      "prompt": "请生成一张机制图解方向的科研绘图，主题围绕：“图示在非洲锥虫病中的炎症性贫血机制以及GPI治疗的影响：图中应展示锥虫感染小鼠中，铁的稳态被破坏，导致铁在网状内皮系统的积累。重点表现关键词：图示在非洲锥虫病中的炎症性贫血机制以及GPI治疗的影响、图中应展示锥虫感染小鼠中、铁的稳态被破坏、导致铁在网状内皮系统的积累、重点展示巨噬细胞、M细胞、在此贫血类型的诱导与维持中的作用、并展示GPI治疗如何通过调节M细胞。画面采用现代机制图解、图形摘要、清晰箭头、模块化分区、期刊插图质感。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251126/28ad22084e99a5a170f7cae0c3553193.png?t=1764129828787",
+      "keywords": [
+        "图示在非洲锥虫病中的炎症性贫血机制以及GPI治疗的影响",
+        "图中应展示锥虫感染小鼠中",
+        "铁的稳态被破坏",
+        "导致铁在网状内皮系统的积累",
+        "重点展示巨噬细胞",
+        "M细胞",
+        "在此贫血类型的诱导与维持中的作用",
+        "并展示GPI治疗如何通过调节M细胞"
+      ],
+      "source": "library",
+      "source_index": 31,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_6d1b7f3a893e": {
+      "id": "preset_6d1b7f3a893e",
+      "category": "机制图解",
+      "name": "“医学插画，展示原发性甲状旁腺功能亢进（PHPT）的手术管理流程",
+      "prompt": "请生成一张机制图解方向的科研绘图，主题围绕：“医学插画，展示原发性甲状旁腺功能亢进（PHPT）的手术管理流程。重点表现关键词：PHPT。画面采用现代机制图解、图形摘要、清晰箭头、模块化分区、期刊插图质感。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251126/6e53be72304e9f7f9dea73cd49f34294.png?t=1764135622675",
+      "keywords": [
+        "PHPT"
+      ],
+      "source": "library",
+      "source_index": 32,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_3fd929ddfa93": {
+      "id": "preset_3fd929ddfa93",
+      "category": "机制图解",
+      "name": "“医学科研机制图，展示急性缺血性卒中接受血管内治疗（机械取栓）患者中，白质病变（WML）体积对围手术期阿司匹林和普通肝素的不良结局风险修饰作用",
+      "prompt": "请生成一张机制图解方向的科研绘图，主题围绕：“医学科研机制图，展示急性缺血性卒中接受血管内治疗（机械取栓）患者中，白质病变（WML）体积对围手术期阿司匹林和普通肝素的不良结局风险修饰作用。重点表现关键词：WML。画面采用现代机制图解、图形摘要、清晰箭头、模块化分区、期刊插图质感。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251126/0f17c99072222969c1da0b966ec32541.png",
+      "keywords": [
+        "WML"
+      ],
+      "source": "library",
+      "source_index": 33,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_e8006854d7c8": {
+      "id": "preset_e8006854d7c8",
+      "category": "机制图解",
+      "name": "“医学临床研究示意图，展示抗合成酶综合征相关间质性肺病（ASyS-ILD）患者参与随机、双盲、安慰剂对照试验评估abatacept疗效的流程",
+      "prompt": "请生成一张机制图解方向的科研绘图，主题围绕：“医学临床研究示意图，展示抗合成酶综合征相关间质性肺病（ASyS-ILD）患者参与随机、双盲、安慰剂对照试验评估abatacept疗效的流程。重点表现关键词：ASyS-ILD、FVC、DLCO、SOBQ、VAS。画面采用现代机制图解、图形摘要、清晰箭头、模块化分区、期刊插图质感。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251126/9698114e2549d9bdeb7602fa6a40ad55.png?t=1764135983136",
+      "keywords": [
+        "ASyS-ILD",
+        "FVC",
+        "DLCO",
+        "SOBQ",
+        "VAS"
+      ],
+      "source": "library",
+      "source_index": 34,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_934e3a67196d": {
+      "id": "preset_934e3a67196d",
+      "category": "机制图解",
+      "name": "“医学科研系统综述与Meta分析示意图，展示儿童扩张型心肌病（DCM）影像学特征与心力衰竭不良结局之间的关联",
+      "prompt": "请生成一张机制图解方向的科研绘图，主题围绕：“医学科研系统综述与Meta分析示意图，展示儿童扩张型心肌病（DCM）影像学特征与心力衰竭不良结局之间的关联。重点表现关键词：DCM、Embase、LVEDD、LVEF、LVFS、CMR、Gadolinium、Enhancement。画面采用现代机制图解、图形摘要、清晰箭头、模块化分区、期刊插图质感。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251126/fad7f058a584e5fa36e377fcca895634.png?t=1764136118070",
+      "keywords": [
+        "DCM",
+        "Embase",
+        "LVEDD",
+        "LVEF",
+        "LVFS",
+        "CMR",
+        "Gadolinium",
+        "Enhancement"
+      ],
+      "source": "library",
+      "source_index": 35,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_bce450023a9b": {
+      "id": "preset_bce450023a9b",
+      "category": "机制图解",
+      "name": "“医学科研机制与临床队列比较示意图，展示骨髓纤维化（MF）患者在造血干细胞移植（HSCT）前后使用或停用鲁索替尼（ruxolitinib）时炎性细胞因子水平的变...",
+      "prompt": "请生成一张机制图解方向的科研绘图，主题围绕：“医学科研机制与临床队列比较示意图，展示骨髓纤维化（MF）患者在造血干细胞移植（HSCT）前后使用或停用鲁索替尼（ruxolitinib）时炎性细胞因子水平的变...。重点表现关键词：HSCT、GVHD、JAK-STAT、CD25、REG3A、IL-18、ST2。画面采用现代机制图解、图形摘要、清晰箭头、模块化分区、期刊插图质感。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251126/7f4f0e2f5d2a48274eb771cd7e2565ad.png?t=1764136294540",
+      "keywords": [
+        "HSCT",
+        "GVHD",
+        "JAK-STAT",
+        "CD25",
+        "REG3A",
+        "IL-18",
+        "ST2"
+      ],
+      "source": "library",
+      "source_index": 36,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_9ff3d71c795f": {
+      "id": "preset_9ff3d71c795f",
+      "category": "机制图解",
+      "name": "“心血管基础研究机制图，展示 fibulin-4 在压力超负荷下对心脏结构和功能的关键作用",
+      "prompt": "请生成一张机制图解方向的科研绘图，主题围绕：“心血管基础研究机制图，展示 fibulin-4 在压力超负荷下对心脏结构和功能的关键作用。重点表现关键词：TAC。画面采用现代机制图解、图形摘要、清晰箭头、模块化分区、期刊插图质感。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251126/8f03a6f63be706080e977d1e3101f3e9.png?t=1764136595531",
+      "keywords": [
+        "TAC"
+      ],
+      "source": "library",
+      "source_index": 37,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_7edc70a0d29c": {
+      "id": "preset_7edc70a0d29c",
+      "category": "机制图解",
+      "name": "“创伤后异位骨化（HO）机制与TGFβ通路靶向抑制治疗的医学机制图",
+      "prompt": "请生成一张机制图解方向的科研绘图，主题围绕：“创伤后异位骨化（HO）机制与TGFβ通路靶向抑制治疗的医学机制图。重点表现关键词：TGFβ、MPCs、SB431542、Galunisertib/LY2157299、Halofuginone、SIS3。画面采用现代机制图解、图形摘要、清晰箭头、模块化分区、期刊插图质感。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251126/87a06f9fbdfa2a64d827f7783849e71a.png?t=1764136555041",
+      "keywords": [
+        "TGFβ",
+        "MPCs",
+        "SB431542",
+        "Galunisertib",
+        "LY2157299",
+        "Halofuginone",
+        "SIS3"
+      ],
+      "source": "library",
+      "source_index": 38,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_636eeed3e6b1": {
+      "id": "preset_636eeed3e6b1",
+      "category": "机制图解",
+      "name": "“医学临床研究示意图，展示轻度宫腔粘连（IUAs）患者接受或不接受宫腔镜分粘术（hysteroscopic adhesiolysis）后进行胚胎移植（ET）时的...",
+      "prompt": "请生成一张机制图解方向的科研绘图，主题围绕：“医学临床研究示意图，展示轻度宫腔粘连（IUAs）患者接受或不接受宫腔镜分粘术（hysteroscopic adhesiolysis）后进行胚胎移植（ET）时的...。重点表现关键词：IUAs。画面采用现代机制图解、图形摘要、清晰箭头、模块化分区、期刊插图质感。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251126/54ae52529e9cebaf0a16b1d80be2e47e.png?t=1764136733090",
+      "keywords": [
+        "IUAs"
+      ],
+      "source": "library",
+      "source_index": 39,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_2088954a45a2": {
+      "id": "preset_2088954a45a2",
+      "category": "机制图解",
+      "name": "肝窦内皮细胞（LSECs）在软与硬基质上形态及功能差异的机制图",
+      "prompt": "请生成一张机制图解方向的科研绘图，主题围绕：肝窦内皮细胞（LSECs）在软与硬基质上形态及功能差异的机制图。重点表现关键词：LSECs、LSEC、PAA、AFM、Mcpip1、HR-SIM。画面采用现代机制图解、图形摘要、清晰箭头、模块化分区、期刊插图质感。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251126/0a116e2e9398652820718e976f301da1.png",
+      "keywords": [
+        "LSECs",
+        "LSEC",
+        "PAA",
+        "AFM",
+        "Mcpip1",
+        "HR-SIM"
+      ],
+      "source": "library",
+      "source_index": 40,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_6db3dcfb175d": {
+      "id": "preset_6db3dcfb175d",
+      "category": "机制图解",
+      "name": "“青光眼与糖尿病相关小梁网（TM）功能障碍的分子机制图",
+      "prompt": "请生成一张机制图解方向的科研绘图，主题围绕：“青光眼与糖尿病相关小梁网（TM）功能障碍的分子机制图。重点表现关键词：Schlemm、IOP、HTM、STRING、TXNIP、ROS、CCL7、CHI3L1。画面采用现代机制图解、图形摘要、清晰箭头、模块化分区、期刊插图质感。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251126/75b381f3b0ee76468ab86775176e5681.png?t=1764137515718",
+      "keywords": [
+        "Schlemm",
+        "IOP",
+        "HTM",
+        "STRING",
+        "TXNIP",
+        "ROS",
+        "CCL7",
+        "CHI3L1"
+      ],
+      "source": "library",
+      "source_index": 41,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_4c2b51e53793": {
+      "id": "preset_4c2b51e53793",
+      "category": "机制图解",
+      "name": "“子宫内膜异位症（Endometriosis）中纤维化形成机制与 OTUD1 功能作用的机制示意图",
+      "prompt": "请生成一张机制图解方向的科研绘图，主题围绕：“子宫内膜异位症（Endometriosis）中纤维化形成机制与 OTUD1 功能作用的机制示意图。重点表现关键词：Endometriosis、OTUD1、TGF-β、MADH7、SMAD7、TGF-β/SMAD、HEMCs、SMA。画面采用现代机制图解、图形摘要、清晰箭头、模块化分区、期刊插图质感。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251126/54c38444205b2670452285b596ab9a8b.png",
+      "keywords": [
+        "Endometriosis",
+        "OTUD1",
+        "TGF-β",
+        "MADH7",
+        "SMAD7",
+        "TGF-β",
+        "SMAD",
+        "HEMCs",
+        "SMA"
+      ],
+      "source": "library",
+      "source_index": 42,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_9b3657c84bb8": {
+      "id": "preset_9b3657c84bb8",
+      "category": "机制图解",
+      "name": "① CKD 模型模块",
+      "prompt": "请生成一张机制图解方向的科研绘图，主题围绕：① CKD 模型模块。重点表现关键词：CKD、FAN、UUO、NED、Scr、BUN、Fibronectin、Collagen。画面采用现代机制图解、图形摘要、清晰箭头、模块化分区、期刊插图质感。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251126/8b53f1fc0e0429f1410b2eb5eb610abc.png",
+      "keywords": [
+        "CKD",
+        "FAN",
+        "UUO",
+        "NED",
+        "Scr",
+        "BUN",
+        "Fibronectin",
+        "Collagen"
+      ],
+      "source": "library",
+      "source_index": 43,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_8d139322d801": {
+      "id": "preset_8d139322d801",
+      "category": "机制图解",
+      "name": "“肝星状细胞（HSC）在肝纤维化、肝硬化及肝细胞癌（HCC）中的关键作用与靶向治疗策略的机制图",
+      "prompt": "请生成一张机制图解方向的科研绘图，主题围绕：“肝星状细胞（HSC）在肝纤维化、肝硬化及肝细胞癌（HCC）中的关键作用与靶向治疗策略的机制图。重点表现关键词：HSC、HCC、MFB、ECM、III、CAF、YAP/TAZ、TGF-β。画面采用现代机制图解、图形摘要、清晰箭头、模块化分区、期刊插图质感。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251126/a6fc9caec03502b4ac4890c49c620880.png",
+      "keywords": [
+        "HSC",
+        "HCC",
+        "MFB",
+        "ECM",
+        "III",
+        "CAF",
+        "YAP",
+        "TAZ",
+        "TGF-β"
+      ],
+      "source": "library",
+      "source_index": 44,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_529af10ecb66": {
+      "id": "preset_529af10ecb66",
+      "category": "机制图解",
+      "name": "“Rho 激酶（ROCK）抑制剂在原发性开角型青光眼（POAG）中的作用机制、临床疗效与研究现状的综合机制图",
+      "prompt": "请生成一张机制图解方向的科研绘图，主题围绕：“Rho 激酶（ROCK）抑制剂在原发性开角型青光眼（POAG）中的作用机制、临床疗效与研究现状的综合机制图。重点表现关键词：Rho、ROCK、POAG、Trabecular、Meshwork、Schlemm、IOP、Ovid。画面采用现代机制图解、图形摘要、清晰箭头、模块化分区、期刊插图质感。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251126/0ffdfff53e309ead56dc6f9f502f85ec.png",
+      "keywords": [
+        "Rho",
+        "ROCK",
+        "POAG",
+        "Trabecular",
+        "Meshwork",
+        "Schlemm",
+        "IOP",
+        "Ovid"
+      ],
+      "source": "library",
+      "source_index": 45,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_481c04b5d818": {
+      "id": "preset_481c04b5d818",
+      "category": "机制图解",
+      "name": "“描绘离乳仔猪在连续 13 天脂多糖（LPS）刺激下心脏损伤过程的时间动态机制图",
+      "prompt": "请生成一张机制图解方向的科研绘图，主题围绕：“描绘离乳仔猪在连续 13 天脂多糖（LPS）刺激下心脏损伤过程的时间动态机制图。重点表现关键词：LPS、Duroc、Landrace、Large、White、LDH、CK-MB、Masson。画面采用现代机制图解、图形摘要、清晰箭头、模块化分区、期刊插图质感。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251126/036cd4be4dfd95fbd0f3033bb835b853.png",
+      "keywords": [
+        "LPS",
+        "Duroc",
+        "Landrace",
+        "Large",
+        "White",
+        "LDH",
+        "CK-MB",
+        "Masson"
+      ],
+      "source": "library",
+      "source_index": 46,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_a44b8ef4bd58": {
+      "id": "preset_a44b8ef4bd58",
+      "category": "机制图解",
+      "name": "① 疾病背景模块",
+      "prompt": "请生成一张机制图解方向的科研绘图，主题围绕：① 疾病背景模块。重点表现关键词：CTA、ImageTBAD、AVT、Net、CNN、U-Net、Stanford、A/B。画面采用现代机制图解、图形摘要、清晰箭头、模块化分区、期刊插图质感。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251126/587491803b7c76f186fb82123a4bee54.png",
+      "keywords": [
+        "CTA",
+        "ImageTBAD",
+        "AVT",
+        "Net",
+        "CNN",
+        "U-Net",
+        "Stanford",
+        "A",
+        "B"
+      ],
+      "source": "library",
+      "source_index": 47,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_883db5daeace": {
+      "id": "preset_883db5daeace",
+      "category": "机制图解",
+      "name": "① 患者基本情况模块",
+      "prompt": "请生成一张机制图解方向的科研绘图，主题围绕：① 患者基本情况模块。重点表现关键词：FDG、PET/CT、Coxiella、Doxycycline、Hydroxychloroquine、Figure。画面采用现代机制图解、图形摘要、清晰箭头、模块化分区、期刊插图质感。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251126/5e980334dbb4b7b29a7d341bb27ad532.png",
+      "keywords": [
+        "FDG",
+        "PET",
+        "CT",
+        "Coxiella",
+        "Doxycycline",
+        "Hydroxychloroquine",
+        "Figure"
+      ],
+      "source": "library",
+      "source_index": 48,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_1721c5017211": {
+      "id": "preset_1721c5017211",
+      "category": "机制图解",
+      "name": "描绘人乳头瘤病毒（HPV）在入侵宿主细胞时，从高尔基体转运至细胞核并通过有丝分裂核膜破裂（NEB）进入核内的 IPO7 依赖性机制图",
+      "prompt": "请生成一张机制图解方向的科研绘图，主题围绕：描绘人乳头瘤病毒（HPV）在入侵宿主细胞时，从高尔基体转运至细胞核并通过有丝分裂核膜破裂（NEB）进入核内的 IPO7 依赖性机制图。重点表现关键词：HPV、NEB、IPO7、COPI、Importin-7、Golgi、Nucleus、HPV/L2。画面采用现代机制图解、图形摘要、清晰箭头、模块化分区、期刊插图质感。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251126/75b04a56d1ec7c9610915bca4bf3628f.png",
+      "keywords": [
+        "HPV",
+        "NEB",
+        "IPO7",
+        "COPI",
+        "Importin-7",
+        "Golgi",
+        "Nucleus",
+        "HPV",
+        "L2"
+      ],
+      "source": "library",
+      "source_index": 49,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_255a77120f3a": {
+      "id": "preset_255a77120f3a",
+      "category": "机制图解",
+      "name": "“展示免疫检查点抑制剂相关心肌炎（ICI-M）中 CMR 的诊断价值、关键影像指标、预后信号以及局限性的总结性医学综述图",
+      "prompt": "请生成一张机制图解方向的科研绘图，主题围绕：“展示免疫检查点抑制剂相关心肌炎（ICI-M）中 CMR 的诊断价值、关键影像指标、预后信号以及局限性的总结性医学综述图。重点表现关键词：ICI-M、CMR、ICI-、PD-1/PD-L1、CTLA-4、LGE、Strain、GLS。画面采用现代机制图解、图形摘要、清晰箭头、模块化分区、期刊插图质感。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251126/2b586791347e4e264fc8083401f8b065.png",
+      "keywords": [
+        "ICI-M",
+        "CMR",
+        "ICI-",
+        "PD-1",
+        "PD-L1",
+        "CTLA-4",
+        "LGE",
+        "Strain",
+        "GLS"
+      ],
+      "source": "library",
+      "source_index": 50,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_05f78bf578e5": {
+      "id": "preset_05f78bf578e5",
+      "category": "机制图解",
+      "name": "“展示基于深度学习的 CTPA（胸部增强 CT 肺动脉造影）血管分割技术如何自动量化肺血容量（PBV），并用于预测和评估慢性血栓栓塞性肺动脉高压（CTEPH）患...",
+      "prompt": "请生成一张机制图解方向的科研绘图，主题围绕：“展示基于深度学习的 CTPA（胸部增强 CT 肺动脉造影）血管分割技术如何自动量化肺血容量（PBV），并用于预测和评估慢性血栓栓塞性肺动脉高压（CTEPH）患...。重点表现关键词：CTPA、PBV、CTEPH、PEA、Net、ROC、AUROC、RHC。画面采用现代机制图解、图形摘要、清晰箭头、模块化分区、期刊插图质感。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251126/b727f1a10ba64811357c79cc1d4ba0cc.png",
+      "keywords": [
+        "CTPA",
+        "PBV",
+        "CTEPH",
+        "PEA",
+        "Net",
+        "ROC",
+        "AUROC",
+        "RHC"
+      ],
+      "source": "library",
+      "source_index": 51,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_e1a076009f43": {
+      "id": "preset_e1a076009f43",
+      "category": "机制图解",
+      "name": "过滤膜横截面，脏水中的污染物被阻挡，清洁水分子通过，微观过滤机制，透视效果",
+      "prompt": "请生成一张机制图解方向的科研绘图，主题围绕：过滤膜横截面，脏水中的污染物被阻挡，清洁水分子通过，微观过滤机制，透视效果。重点表现关键词：过滤膜横截面、脏水中的污染物被阻挡、清洁水分子通过、微观过滤机制、透视效果。画面采用现代机制图解、图形摘要、清晰箭头、模块化分区、期刊插图质感。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251127/2c20e4aa924bf1ee9614378ba7a7472b.png",
+      "keywords": [
+        "过滤膜横截面",
+        "脏水中的污染物被阻挡",
+        "清洁水分子通过",
+        "微观过滤机制",
+        "透视效果"
+      ],
+      "source": "library",
+      "source_index": 52,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_a2e91f14ad7b": {
+      "id": "preset_a2e91f14ad7b",
+      "category": "机制图解",
+      "name": "展示不同地区的水资源利用状况及其管理措施",
+      "prompt": "请生成一张机制图解方向的科研绘图，主题围绕：展示不同地区的水资源利用状况及其管理措施。重点表现关键词：展示不同地区的水资源利用状况及其管理措施。画面采用现代机制图解、图形摘要、清晰箭头、模块化分区、期刊插图质感。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251127/67ca9af04413c4b0552fd16b8380129b.png",
+      "keywords": [
+        "展示不同地区的水资源利用状况及其管理措施"
+      ],
+      "source": "library",
+      "source_index": 53,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_bd4f42109715": {
+      "id": "preset_bd4f42109715",
+      "category": "机制图解",
+      "name": "展示温度变化、CO2浓度等数据的趋势图",
+      "prompt": "请生成一张机制图解方向的科研绘图，主题围绕：展示温度变化、CO2浓度等数据的趋势图。重点表现关键词：展示温度变化、CO2浓度等数据的趋势图。画面采用现代机制图解、图形摘要、清晰箭头、模块化分区、期刊插图质感。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251127/a88637a4149ea91cce3bdc3842ae1ac6.png",
+      "keywords": [
+        "展示温度变化",
+        "CO2浓度等数据的趋势图"
+      ],
+      "source": "library",
+      "source_index": 54,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_80da65f13ede": {
+      "id": "preset_80da65f13ede",
+      "category": "机制图解",
+      "name": "高温胁迫下果实发育、生理与品质调控",
+      "prompt": "请生成一张机制图解方向的科研绘图，主题围绕：高温胁迫下果实发育、生理与品质调控。重点表现关键词：HSP70、ABA。画面采用现代机制图解、图形摘要、清晰箭头、模块化分区、期刊插图质感。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251130/96873b2925bd16e2e7e3d831aadb6862.png",
+      "keywords": [
+        "HSP70",
+        "ABA"
+      ],
+      "source": "library",
+      "source_index": 55,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_9d4e6d7cdc67": {
+      "id": "preset_9d4e6d7cdc67",
+      "category": "机制图解",
+      "name": "低温或冷胁迫对果实发育与果树生殖生长的影响",
+      "prompt": "请生成一张机制图解方向的科研绘图，主题围绕：低温或冷胁迫对果实发育与果树生殖生长的影响。重点表现关键词：COR。画面采用现代机制图解、图形摘要、清晰箭头、模块化分区、期刊插图质感。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251130/cc9002f36107320dce662142eb220083.png",
+      "keywords": [
+        "COR"
+      ],
+      "source": "library",
+      "source_index": 56,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_b72f7f18603c": {
+      "id": "preset_b72f7f18603c",
+      "category": "机制图解",
+      "name": "干旱与水分胁迫对果实发育与产量、品质的影响",
+      "prompt": "请生成一张机制图解方向的科研绘图，主题围绕：干旱与水分胁迫对果实发育与产量、品质的影响。重点表现关键词：ABA。画面采用现代机制图解、图形摘要、清晰箭头、模块化分区、期刊插图质感。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251130/680a2f239c20d5d345e41b56419dcd17.png",
+      "keywords": [
+        "ABA"
+      ],
+      "source": "library",
+      "source_index": 57,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_697fa3f86cef": {
+      "id": "preset_697fa3f86cef",
+      "category": "机制图解",
+      "name": "盐碱 / 土壤盐胁迫对果树 / 果蔬作物坐果与果实发育的影响",
+      "prompt": "请生成一张机制图解方向的科研绘图，主题围绕：盐碱 / 土壤盐胁迫对果树 / 果蔬作物坐果与果实发育的影响。重点表现关键词：SOS1、NHX。画面采用现代机制图解、图形摘要、清晰箭头、模块化分区、期刊插图质感。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251130/4d2887fc445d084e7f22b0a402e66003.png",
+      "keywords": [
+        "SOS1",
+        "NHX"
+      ],
+      "source": "library",
+      "source_index": 58,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_1f3690ae9d3f": {
+      "id": "preset_1f3690ae9d3f",
+      "category": "机制图解",
+      "name": "多重胁迫（如高温 + 干旱 + 盐碱 / 水涝／盐碱复合）对果实发育的综合影响",
+      "prompt": "请生成一张机制图解方向的科研绘图，主题围绕：多重胁迫（如高温 + 干旱 + 盐碱 / 水涝／盐碱复合）对果实发育的综合影响。重点表现关键词：多重胁迫、如高温、水涝／盐碱复合、对果实发育的综合影响、整体布局、展示复合胁迫下植物反应的交互效应、包含多种胁迫的联合影响、机制图。画面采用现代机制图解、图形摘要、清晰箭头、模块化分区、期刊插图质感。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251130/7634b17216abcf7f1f3c9cb0452ffe9f.png",
+      "keywords": [
+        "多重胁迫",
+        "如高温",
+        "水涝／盐碱复合",
+        "对果实发育的综合影响",
+        "整体布局",
+        "展示复合胁迫下植物反应的交互效应",
+        "包含多种胁迫的联合影响",
+        "机制图"
+      ],
+      "source": "library",
+      "source_index": 59,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_6cb4f0e54cf1": {
+      "id": "preset_6cb4f0e54cf1",
+      "category": "机制图解",
+      "name": "果实发育过程中的激素调控与胁迫响应 — 激素 × 胁迫 × 果实发育交互机制",
+      "prompt": "请生成一张机制图解方向的科研绘图，主题围绕：果实发育过程中的激素调控与胁迫响应 — 激素 × 胁迫 × 果实发育交互机制。重点表现关键词：ABA。画面采用现代机制图解、图形摘要、清晰箭头、模块化分区、期刊插图质感。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251130/0c6f56fa4b1a70b29824161720046a6f.png",
+      "keywords": [
+        "ABA"
+      ],
+      "source": "library",
+      "source_index": 60,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_0fc838385c96": {
+      "id": "preset_0fc838385c96",
+      "category": "机制图解",
+      "name": "果实发育阶段的分子机制（转录组、蛋白组、代谢组、表观遗传）在胁迫条件下的变化",
+      "prompt": "请生成一张机制图解方向的科研绘图，主题围绕：果实发育阶段的分子机制（转录组、蛋白组、代谢组、表观遗传）在胁迫条件下的变化。重点表现关键词：果实发育阶段的分子机制、转录组、蛋白组、代谢组、表观遗传、在胁迫条件下的变化、整体布局、展示不同组学。画面采用现代机制图解、图形摘要、清晰箭头、模块化分区、期刊插图质感。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251130/bbaeb25d16628f567254e395ed8b1229.png",
+      "keywords": [
+        "果实发育阶段的分子机制",
+        "转录组",
+        "蛋白组",
+        "代谢组",
+        "表观遗传",
+        "在胁迫条件下的变化",
+        "整体布局",
+        "展示不同组学"
+      ],
+      "source": "library",
+      "source_index": 61,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_1406a2509af4": {
+      "id": "preset_1406a2509af4",
+      "category": "机制图解",
+      "name": "抗氧化与渗透保护机制在胁迫下果实发育与品质保持中的作用",
+      "prompt": "请生成一张机制图解方向的科研绘图，主题围绕：抗氧化与渗透保护机制在胁迫下果实发育与品质保持中的作用。重点表现关键词：CAT。画面采用现代机制图解、图形摘要、清晰箭头、模块化分区、期刊插图质感。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251130/2d4b13b83fb8cf048661a789c635b50f.png",
+      "keywords": [
+        "CAT"
+      ],
+      "source": "library",
+      "source_index": 62,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_690b83864ef4": {
+      "id": "preset_690b83864ef4",
+      "category": "机制图解",
+      "name": "果树 / 果蔬品种对胁迫适应性的遗传 /育种 /基因编辑研究",
+      "prompt": "请生成一张机制图解方向的科研绘图，主题围绕：果树 / 果蔬品种对胁迫适应性的遗传 /育种 /基因编辑研究。重点表现关键词：CRISPR。画面采用现代机制图解、图形摘要、清晰箭头、模块化分区、期刊插图质感。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251130/1c709bedc234da0a151238040537a7a6.png",
+      "keywords": [
+        "CRISPR"
+      ],
+      "source": "library",
+      "source_index": 63,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_fef2d8336739": {
+      "id": "preset_fef2d8336739",
+      "category": "机制图解",
+      "name": "果实发育期—生理—胁迫历史记忆 (stress memory) 与“应激预调 / 驯化 (priming / acclimation)” 对产量与品质的长期影响...",
+      "prompt": "请生成一张机制图解方向的科研绘图，主题围绕：果实发育期—生理—胁迫历史记忆 (stress memory) 与“应激预调 / 驯化 (priming / acclimation)” 对产量与品质的长期影响...。重点表现关键词：果实发育期—生理—胁迫历史记忆、stress、memory、应激预调、priming、acclimation、对产量与品质的长期影响研究、整体布局。画面采用现代机制图解、图形摘要、清晰箭头、模块化分区、期刊插图质感。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251130/23f724a0b466e74398375aa8cc7041b0.png",
+      "keywords": [
+        "果实发育期—生理—胁迫历史记忆",
+        "stress",
+        "memory",
+        "应激预调",
+        "priming",
+        "acclimation",
+        "对产量与品质的长期影响研究",
+        "整体布局"
+      ],
+      "source": "library",
+      "source_index": 64,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_0eef59c92180": {
+      "id": "preset_0eef59c92180",
+      "category": "炎症与脓毒症",
+      "name": "Age-related susceptibility to sepsis and endotoxemia is poorly defined, although...",
+      "prompt": "请生成一张炎症与脓毒症方向的科研绘图，主题围绕：Age-related susceptibility to sepsis and endotoxemia is poorly defined, although...。重点表现关键词：Age-related、Macrophages、NLRP3、However、Gdf3、TGFβ、ATMs、Here。画面采用免疫炎症机制图、器官损伤示意、细胞信号通路、医学图形摘要。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251126/8ef4cd59457f17586a21429a1649eb48.png",
+      "keywords": [
+        "Age-related",
+        "Macrophages",
+        "NLRP3",
+        "However",
+        "Gdf3",
+        "TGFβ",
+        "ATMs",
+        "Here"
+      ],
+      "source": "library",
+      "source_index": 1,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_e30faf415e17": {
+      "id": "preset_e30faf415e17",
+      "category": "炎症与脓毒症",
+      "name": "Septic cardiomyopathy is a life-threatening heart dysfunction caused by severe i...",
+      "prompt": "请生成一张炎症与脓毒症方向的科研绘图，主题围绕：Septic cardiomyopathy is a life-threatening heart dysfunction caused by severe i...。重点表现关键词：Septic、Considering、Based、The、KLRG1、PRF1、BCL6、GAB2。画面采用免疫炎症机制图、器官损伤示意、细胞信号通路、医学图形摘要。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251126/97c2dedae55fe4f5e1a54dcbdc537bfb.png",
+      "keywords": [
+        "Septic",
+        "Considering",
+        "Based",
+        "The",
+        "KLRG1",
+        "PRF1",
+        "BCL6",
+        "GAB2"
+      ],
+      "source": "library",
+      "source_index": 2,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_501ac166ab5f": {
+      "id": "preset_501ac166ab5f",
+      "category": "炎症与脓毒症",
+      "name": "Sepsis is a serious inflammatory disease caused by bacterial infection",
+      "prompt": "请生成一张炎症与脓毒症方向的科研绘图，主题围绕：Sepsis is a serious inflammatory disease caused by bacterial infection。重点表现关键词：Sepsis、Cardiovascular、Delta-like、DLK1、However、GSE79962、CLP、SMA。画面采用免疫炎症机制图、器官损伤示意、细胞信号通路、医学图形摘要。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251126/52637ce771d296920db7b197f1404b06.png",
+      "keywords": [
+        "Sepsis",
+        "Cardiovascular",
+        "Delta-like",
+        "DLK1",
+        "However",
+        "GSE79962",
+        "CLP",
+        "SMA"
+      ],
+      "source": "library",
+      "source_index": 3,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_ffc30cee13d0": {
+      "id": "preset_ffc30cee13d0",
+      "category": "炎症与脓毒症",
+      "name": "Background: Sepsis is a major clinical challenge, with in-hospital mortality of...",
+      "prompt": "请生成一张炎症与脓毒症方向的科研绘图，主题围绕：Background: Sepsis is a major clinical challenge, with in-hospital mortality of...。重点表现关键词：Background、Sepsis、The、ACSL4、Methods、Key、GEO、Network。画面采用免疫炎症机制图、器官损伤示意、细胞信号通路、医学图形摘要。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251126/9cff62b916303a8640420a23e9056368.png",
+      "keywords": [
+        "Background",
+        "Sepsis",
+        "The",
+        "ACSL4",
+        "Methods",
+        "Key",
+        "GEO",
+        "Network"
+      ],
+      "source": "library",
+      "source_index": 4,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_f621d97cd4f4": {
+      "id": "preset_f621d97cd4f4",
+      "category": "炎症与脓毒症",
+      "name": "Introduction: Sepsis-associated acute kidney injury (AKI) is a common complicati...",
+      "prompt": "请生成一张炎症与脓毒症方向的科研绘图，主题围绕：Introduction: Sepsis-associated acute kidney injury (AKI) is a common complicati...。重点表现关键词：Introduction、Sepsis-associated、AKI、The、TGF-β/Smad、TGF-β、TGFBR2、Ubiquitin-specific。画面采用免疫炎症机制图、器官损伤示意、细胞信号通路、医学图形摘要。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251126/7d96a2ed0811a12fd0062175c61cc167.png",
+      "keywords": [
+        "Introduction",
+        "Sepsis-associated",
+        "AKI",
+        "The",
+        "TGF-β",
+        "Smad",
+        "TGF-β",
+        "TGFBR2",
+        "Ubiquitin-specific"
+      ],
+      "source": "library",
+      "source_index": 5,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_142bdb159dd3": {
+      "id": "preset_142bdb159dd3",
+      "category": "炎症与脓毒症",
+      "name": "Background: Sepsis-induced acute liver injury (ALI) is a major contributor to mo...",
+      "prompt": "请生成一张炎症与脓毒症方向的科研绘图，主题围绕：Background: Sepsis-induced acute liver injury (ALI) is a major contributor to mo...。重点表现关键词：Background、Sepsis-induced、ALI、Exploring、Dachengqi、DCQD、Chinese、However。画面采用免疫炎症机制图、器官损伤示意、细胞信号通路、医学图形摘要。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251126/302a416c7b3918b74c1eef88659de563.png",
+      "keywords": [
+        "Background",
+        "Sepsis-induced",
+        "ALI",
+        "Exploring",
+        "Dachengqi",
+        "DCQD",
+        "Chinese",
+        "However"
+      ],
+      "source": "library",
+      "source_index": 6,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_5b4ad215cc22": {
+      "id": "preset_5b4ad215cc22",
+      "category": "炎症与脓毒症",
+      "name": "Sepsis-induced acute kidney injury (SI-AKI) causes renal dysfunction and has a h...",
+      "prompt": "请生成一张炎症与脓毒症方向的科研绘图，主题围绕：Sepsis-induced acute kidney injury (SI-AKI) causes renal dysfunction and has a h...。重点表现关键词：Sepsis-induced、SI-AKI、Protein、PRMT1、The、TGF、Smad3、STAT3。画面采用免疫炎症机制图、器官损伤示意、细胞信号通路、医学图形摘要。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251126/45948da2a09f2f948e480b1b4a61b338.png",
+      "keywords": [
+        "Sepsis-induced",
+        "SI-AKI",
+        "Protein",
+        "PRMT1",
+        "The",
+        "TGF",
+        "Smad3",
+        "STAT3"
+      ],
+      "source": "library",
+      "source_index": 7,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_d7634f3958f1": {
+      "id": "preset_d7634f3958f1",
+      "category": "炎症与脓毒症",
+      "name": "Macrophages are critical for regulation of inflammatory response during endotoxe...",
+      "prompt": "请生成一张炎症与脓毒症方向的科研绘图，主题围绕：Macrophages are critical for regulation of inflammatory response during endotoxe...。重点表现关键词：Macrophages、However、Growth、GDF3、TGF-β、Nonetheless、Here、Interestingly。画面采用免疫炎症机制图、器官损伤示意、细胞信号通路、医学图形摘要。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251126/58c89c2ecd464ea1e70c9accc4f00118.png",
+      "keywords": [
+        "Macrophages",
+        "However",
+        "Growth",
+        "GDF3",
+        "TGF-β",
+        "Nonetheless",
+        "Here",
+        "Interestingly"
+      ],
+      "source": "library",
+      "source_index": 8,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_81b41115830c": {
+      "id": "preset_81b41115830c",
+      "category": "炎症与脓毒症",
+      "name": "Background: Smad3 is a principal intracellular mediator of signaling for transfo...",
+      "prompt": "请生成一张炎症与脓毒症方向的科研绘图，主题围绕：Background: Smad3 is a principal intracellular mediator of signaling for transfo...。重点表现关键词：Background、Smad3、The、Methods、LPS、Mortality、RNA、Results。画面采用免疫炎症机制图、器官损伤示意、细胞信号通路、医学图形摘要。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251126/9acd5ad400439246e51aa621071bd50b.png",
+      "keywords": [
+        "Background",
+        "Smad3",
+        "The",
+        "Methods",
+        "LPS",
+        "Mortality",
+        "RNA",
+        "Results"
+      ],
+      "source": "library",
+      "source_index": 9,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_d620bd808746": {
+      "id": "preset_d620bd808746",
+      "category": "炎症与脓毒症",
+      "name": "Background: This study tested whether human induced-pluripotent stem-cell-derive...",
+      "prompt": "请生成一张炎症与脓毒症方向的科研绘图，主题围绕：Background: This study tested whether human induced-pluripotent stem-cell-derive...。重点表现关键词：Background、This、MSCs、AKI、AKI-induction、Results、Male-adult、MSCs/1。画面采用免疫炎症机制图、器官损伤示意、细胞信号通路、医学图形摘要。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251126/78010130b76b809166dfaf6021a3e18c.png",
+      "keywords": [
+        "Background",
+        "This",
+        "MSCs",
+        "AKI",
+        "AKI-induction",
+        "Results",
+        "Male-adult",
+        "MSCs",
+        "1"
+      ],
+      "source": "library",
+      "source_index": 10,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_4a73f1009b1b": {
+      "id": "preset_4a73f1009b1b",
+      "category": "肝脏研究",
+      "name": "创建一个全面的细胞生物学插图，展示外泌体的生物发生和分子组成，采用现代分子生物学期刊风格",
+      "prompt": "请生成一张肝脏研究方向的科研绘图，主题围绕：创建一个全面的细胞生物学插图，展示外泌体的生物发生和分子组成，采用现代分子生物学期刊风格。重点表现关键词：F8BBD0、MVB、ILV、CD9、CD63、CD81、Alix、TSG101。画面采用肝脏研究机制图、组织切面、细胞通路、临床前研究图示。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251126/3e17d909f1aada739245f12c11dc3125.png",
+      "keywords": [
+        "F8BBD0",
+        "MVB",
+        "ILV",
+        "CD9",
+        "CD63",
+        "CD81",
+        "Alix",
+        "TSG101"
+      ],
+      "source": "library",
+      "source_index": 11,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_7e43ce38cffb": {
+      "id": "preset_7e43ce38cffb",
+      "category": "肝脏研究",
+      "name": "“医学综述示意图，展示原发性硬化性胆管炎（PSC）的病理特征与口服万古霉素治疗的潜在机制",
+      "prompt": "请生成一张肝脏研究方向的科研绘图，主题围绕：“医学综述示意图，展示原发性硬化性胆管炎（PSC）的病理特征与口服万古霉素治疗的潜在机制。重点表现关键词：PSC、IBD。画面采用肝脏研究机制图、组织切面、细胞通路、临床前研究图示。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251126/2a2ed724e8bb6c5a5b63aa8f39b7eb66.png?t=1764136161013",
+      "keywords": [
+        "PSC",
+        "IBD"
+      ],
+      "source": "library",
+      "source_index": 12,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_dbc8dddd607a": {
+      "id": "preset_dbc8dddd607a",
+      "category": "肝脏研究",
+      "name": "“医学综述机制图，展示胆道闭锁（BA）中肝脏纤毛病（hepatic ciliopathies）与缺氧（hypoxia）之间的交互作用",
+      "prompt": "请生成一张肝脏研究方向的科研绘图，主题围绕：“医学综述机制图，展示胆道闭锁（BA）中肝脏纤毛病（hepatic ciliopathies）与缺氧（hypoxia）之间的交互作用。重点表现关键词：HIF-1α、Hedgehog、Notch。画面采用肝脏研究机制图、组织切面、细胞通路、临床前研究图示。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251126/0ccba98e225054c9c869317d545b4230.png?t=1764137393428",
+      "keywords": [
+        "HIF-1α",
+        "Hedgehog",
+        "Notch"
+      ],
+      "source": "library",
+      "source_index": 13,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_3968db88a181": {
+      "id": "preset_3968db88a181",
+      "category": "肝脏研究",
+      "name": "“代谢功能障碍相关脂肪性肝病（MASLD）的非侵入性诊断技术与传统肝活检对比的综述机制图",
+      "prompt": "请生成一张肝脏研究方向的科研绘图，主题围绕：“代谢功能障碍相关脂肪性肝病（MASLD）的非侵入性诊断技术与传统肝活检对比的综述机制图。重点表现关键词：MASLD、Serological、Markers、FIB-4、NAFLD、Fibrosis、Score、NFS。画面采用肝脏研究机制图、组织切面、细胞通路、临床前研究图示。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251126/120e02893716dd7a4973d633e0e7d70a.png",
+      "keywords": [
+        "MASLD",
+        "Serological",
+        "Markers",
+        "FIB-4",
+        "NAFLD",
+        "Fibrosis",
+        "Score",
+        "NFS"
+      ],
+      "source": "library",
+      "source_index": 14,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_191364839454": {
+      "id": "preset_191364839454",
+      "category": "肝脏研究",
+      "name": "① 疾病背景与研究目的模块",
+      "prompt": "请生成一张肝脏研究方向的科研绘图，主题围绕：① 疾病背景与研究目的模块。重点表现关键词：VHR、SSI、SSO、PRISMA、PubMed、Cochrane、Embase、Component。画面采用肝脏研究机制图、组织切面、细胞通路、临床前研究图示。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251126/9f2c81f69359e65df57f18e67d650d40.png",
+      "keywords": [
+        "VHR",
+        "SSI",
+        "SSO",
+        "PRISMA",
+        "PubMed",
+        "Cochrane",
+        "Embase",
+        "Component"
+      ],
+      "source": "library",
+      "source_index": 15,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_0f675b5fab9f": {
+      "id": "preset_0f675b5fab9f",
+      "category": "心脏研究",
+      "name": "“心脏成纤维细胞（Cardiac Fibroblasts, CFs）在心脏发育、稳态与疾病中的双重角色机制图",
+      "prompt": "请生成一张心脏研究方向的科研绘图，主题围绕：“心脏成纤维细胞（Cardiac Fibroblasts, CFs）在心脏发育、稳态与疾病中的双重角色机制图。重点表现关键词：Cardiac、Fibroblasts、CFs、Friend、CMs、FGF、Wnt、TGF-β。画面采用心脏机制图、细胞亚群、ECM重塑、医学插画与信息图结合。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251126/666895e9aad4cda2fa80b7fddf95918c.png",
+      "keywords": [
+        "Cardiac",
+        "Fibroblasts",
+        "CFs",
+        "Friend",
+        "CMs",
+        "FGF",
+        "Wnt",
+        "TGF-β"
+      ],
+      "source": "library",
+      "source_index": 65,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_2de80ee95e75": {
+      "id": "preset_2de80ee95e75",
+      "category": "其他",
+      "name": "① 研究设计模块",
+      "prompt": "请生成一张其他方向的科研绘图，主题围绕：① 研究设计模块。重点表现关键词：III、Nivolumab、Ipilimumab、PD-L1、RFS、DMFS、Kaplan、Meier。画面采用科研信息图、3D/扁平混合、干净背景、可发表级视觉。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251126/dbd1a22816d66d8d1dc7f3a0f0efdee3.png",
+      "keywords": [
+        "III",
+        "Nivolumab",
+        "Ipilimumab",
+        "PD-L1",
+        "RFS",
+        "DMFS",
+        "Kaplan",
+        "Meier"
+      ],
+      "source": "library",
+      "source_index": 66,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_094c687a7ca3": {
+      "id": "preset_094c687a7ca3",
+      "category": "其他",
+      "name": "锂离子电池结构，正极和负极层，隔膜，锂离子穿梭，剖面示意图，金属质感，3D建模风格",
+      "prompt": "请生成一张其他方向的科研绘图，主题围绕：锂离子电池结构，正极和负极层，隔膜，锂离子穿梭，剖面示意图，金属质感，3D建模风格。重点表现关键词：锂离子电池结构、正极和负极层、锂离子穿梭、剖面示意图、金属质感、3D建模风格。画面采用科研信息图、3D/扁平混合、干净背景、可发表级视觉。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251127/a9caf937920fd28e0703838e9e1afede.png",
+      "keywords": [
+        "锂离子电池结构",
+        "正极和负极层",
+        "锂离子穿梭",
+        "剖面示意图",
+        "金属质感",
+        "3D建模风格"
+      ],
+      "source": "library",
+      "source_index": 67,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_cd557d4bc0f1": {
+      "id": "preset_cd557d4bc0f1",
+      "category": "其他",
+      "name": "核壳结构纳米粒子，发光的量子点核心，介孔二氧化硅外壳，孔道清晰，药物分子装载，暗黑背景高光",
+      "prompt": "请生成一张其他方向的科研绘图，主题围绕：核壳结构纳米粒子，发光的量子点核心，介孔二氧化硅外壳，孔道清晰，药物分子装载，暗黑背景高光。重点表现关键词：核壳结构纳米粒子、发光的量子点核心、介孔二氧化硅外壳、孔道清晰、药物分子装载、暗黑背景高光。画面采用科研信息图、3D/扁平混合、干净背景、可发表级视觉。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251127/605f49e6760035135d13b447a63c03a1.png",
+      "keywords": [
+        "核壳结构纳米粒子",
+        "发光的量子点核心",
+        "介孔二氧化硅外壳",
+        "孔道清晰",
+        "药物分子装载",
+        "暗黑背景高光"
+      ],
+      "source": "library",
+      "source_index": 68,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_d1331c148181": {
+      "id": "preset_d1331c148181",
+      "category": "其他",
+      "name": "半导体催化剂表面，阳光照射，水分子分解产生氢气和氧气，电子-空穴对分离，气泡效果",
+      "prompt": "请生成一张其他方向的科研绘图，主题围绕：半导体催化剂表面，阳光照射，水分子分解产生氢气和氧气，电子-空穴对分离，气泡效果。重点表现关键词：半导体催化剂表面、阳光照射、水分子分解产生氢气和氧气、电子-空穴对分离、气泡效果。画面采用科研信息图、3D/扁平混合、干净背景、可发表级视觉。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251127/e772aa4ebcd291be0fc1157bd226d386.png",
+      "keywords": [
+        "半导体催化剂表面",
+        "阳光照射",
+        "水分子分解产生氢气和氧气",
+        "电子-空穴对分离",
+        "气泡效果"
+      ],
+      "source": "library",
+      "source_index": 69,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_de8d006806cc": {
+      "id": "preset_de8d006806cc",
+      "category": "其他",
+      "name": "复杂的有机大分子结构，球棍模型，原子光泽感，景深效果，化学键，封面艺术风格",
+      "prompt": "请生成一张其他方向的科研绘图，主题围绕：复杂的有机大分子结构，球棍模型，原子光泽感，景深效果，化学键，封面艺术风格。重点表现关键词：复杂的有机大分子结构、球棍模型、原子光泽感、景深效果、化学键、封面艺术风格。画面采用科研信息图、3D/扁平混合、干净背景、可发表级视觉。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251127/504c4a02d15c7b336698fb08cbec1e84.png",
+      "keywords": [
+        "复杂的有机大分子结构",
+        "球棍模型",
+        "原子光泽感",
+        "景深效果",
+        "化学键",
+        "封面艺术风格"
+      ],
+      "source": "library",
+      "source_index": 70,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_da742a4643cb": {
+      "id": "preset_da742a4643cb",
+      "category": "其他",
+      "name": "3D低多边形或写实风格，森林、工厂、海洋、大气之间的碳流动，箭头指示，等轴测视图",
+      "prompt": "请生成一张其他方向的科研绘图，主题围绕：3D低多边形或写实风格，森林、工厂、海洋、大气之间的碳流动，箭头指示，等轴测视图。重点表现关键词：3D低多边形或写实风格、大气之间的碳流动、箭头指示、等轴测视图。画面采用科研信息图、3D/扁平混合、干净背景、可发表级视觉。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251127/4d96b126f80921efb5ba0a2aa4776c32.png",
+      "keywords": [
+        "3D低多边形或写实风格",
+        "大气之间的碳流动",
+        "箭头指示",
+        "等轴测视图"
+      ],
+      "source": "library",
+      "source_index": 71,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_640fcc20e9c0": {
+      "id": "preset_640fcc20e9c0",
+      "category": "其他",
+      "name": "生态系统的结构和功能示意图，包括食物链和物质循环",
+      "prompt": "请生成一张其他方向的科研绘图，主题围绕：生态系统的结构和功能示意图，包括食物链和物质循环。重点表现关键词：生态系统的结构和功能示意图、包括食物链和物质循环。画面采用科研信息图、3D/扁平混合、干净背景、可发表级视觉。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251127/2a92d6528a1d48d3ea0d9243d5c3bc2b.png",
+      "keywords": [
+        "生态系统的结构和功能示意图",
+        "包括食物链和物质循环"
+      ],
+      "source": "library",
+      "source_index": 72,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_b71a21f052c6": {
+      "id": "preset_b71a21f052c6",
+      "category": "其他",
+      "name": "抽象的科学背景，点线连接，神经网络或分子网络概念，深蓝色调，留白用于放文字",
+      "prompt": "请生成一张其他方向的科研绘图，主题围绕：抽象的科学背景，点线连接，神经网络或分子网络概念，深蓝色调，留白用于放文字。重点表现关键词：抽象的科学背景、点线连接、神经网络或分子网络概念、深蓝色调、留白用于放文字。画面采用科研信息图、3D/扁平混合、干净背景、可发表级视觉。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251127/8d0f93b4ba3f80346bf5af7dc490a50d.png",
+      "keywords": [
+        "抽象的科学背景",
+        "点线连接",
+        "神经网络或分子网络概念",
+        "深蓝色调",
+        "留白用于放文字"
+      ],
+      "source": "library",
+      "source_index": 73,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_19150f0611a8": {
+      "id": "preset_19150f0611a8",
+      "category": "其他",
+      "name": "血管内部视角，纳米机器人修复组织，极具冲击力的构图，像科幻电影海报，Nature/Science封面风格",
+      "prompt": "请生成一张其他方向的科研绘图，主题围绕：血管内部视角，纳米机器人修复组织，极具冲击力的构图，像科幻电影海报，Nature/Science封面风格。重点表现关键词：Nature/。画面采用科研信息图、3D/扁平混合、干净背景、可发表级视觉。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://tycloud-eos-beijing-1.dftianyi.com/upload/20251127/b56158d734e5467910cefe4e774eae73.png",
+      "keywords": [
+        "Nature"
+      ],
+      "source": "library",
+      "source_index": 74,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_dc9588855774": {
+      "id": "preset_dc9588855774",
+      "category": "其他",
+      "name": "科学信息图风格，扁平设计",
+      "prompt": "请生成一张其他方向的科研绘图，主题围绕：科学信息图风格，扁平设计。重点表现关键词：科学信息图风格、扁平设计、水热法的线性流程图。画面采用科研信息图、3D/扁平混合、干净背景、可发表级视觉。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://sci-plot-files.dftianyi.com/sciplot/images/20251203/67a468b871854f2e99433d6cf94e999f.png",
+      "keywords": [
+        "科学信息图风格",
+        "扁平设计",
+        "水热法的线性流程图"
+      ],
+      "source": "library",
+      "source_index": 75,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_978e808c6a69": {
+      "id": "preset_978e808c6a69",
+      "category": "其他",
+      "name": "Scientific infographic style, flat design",
+      "prompt": "请生成一张其他方向的科研绘图，主题围绕：Scientific infographic style, flat design。重点表现关键词：Scientific、Linear、Step、Mixing、Hydrothermal、Centrifugation、Product、Connected。画面采用科研信息图、3D/扁平混合、干净背景、可发表级视觉。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://sci-plot-files.dftianyi.com/sciplot/images/20251203/4886b1e668f04d7ca47159f1befea198.png",
+      "keywords": [
+        "Scientific",
+        "Linear",
+        "Step",
+        "Mixing",
+        "Hydrothermal",
+        "Centrifugation",
+        "Product",
+        "Connected"
+      ],
+      "source": "library",
+      "source_index": 76,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_c203d4e88628": {
+      "id": "preset_c203d4e88628",
+      "category": "其他",
+      "name": "Machine learning architecture diagram, NeurIPS style",
+      "prompt": "请生成一张其他方向的科研绘图，主题围绕：Machine learning architecture diagram, NeurIPS style。重点表现关键词：Machine、NeurIPS、Left、Input、Middle、Three、CNN、Right。画面采用科研信息图、3D/扁平混合、干净背景、可发表级视觉。构图上使用清晰的模块分区、箭头流向、局部放大框和必要标签；突出研究对象、关键机制、干预因素与最终结论；整体干净严谨，适合论文图形摘要、基金标书或科研汇报使用。",
+      "reference_image": "https://sci-plot-files.dftianyi.com/sciplot/images/20251203/694693179ca54a32ac72b7efd6ec244b.png",
+      "keywords": [
+        "Machine",
+        "NeurIPS",
+        "Left",
+        "Input",
+        "Middle",
+        "Three",
+        "CNN",
+        "Right"
+      ],
+      "source": "library",
+      "source_index": 77,
+      "created_at": "2026-05-01T01:04:45.054824+00:00",
+      "updated_at": "2026-05-01T01:04:45.054824+00:00"
+    },
+    "preset_13c6b99ba520": {
+      "id": "preset_13c6b99ba520",
+      "name": "线稿提取",
+      "category": "模板",
+      "prompt": "把原图转化为干净流畅的纯线稿，仅保留黑白两色，确保黑白层次清晰，色彩关系明确，去除多余杂色与渐变，画面不要有饱和度",
+      "reference_image": "",
+      "keywords": [
+        "线稿提取"
+      ],
+      "source": "custom",
+      "created_at": "2026-05-01T14:19:39.677926+00:00",
+      "updated_at": "2026-05-01T14:20:19.451362+00:00"
+    },
+    "preset_2d8df318bb3e": {
+      "id": "preset_2d8df318bb3e",
+      "name": "色稿提取",
+      "category": "模板",
+      "prompt": "把原图转化为干净流畅的纯色色稿，仅保留画面物体的固有色，确保物体固有色对比层次清晰，色彩关系明确，去除多余杂色与渐变",
+      "reference_image": "",
+      "keywords": [
+        "色稿提取"
+      ],
+      "source": "custom",
+      "created_at": "2026-05-01T14:20:47.094383+00:00",
+      "updated_at": "2026-05-01T14:20:47.094383+00:00"
+    },
+    "preset_47fa8f40e445": {
+      "id": "preset_47fa8f40e445",
+      "name": "反推提示词",
+      "category": "模板",
+      "prompt": "根据输入的图片反推提示词，要求不改变色彩、构图，精细化描述，用于gpt-images-2图片生成",
+      "reference_image": "",
+      "keywords": [
+        "反推"
+      ],
+      "source": "custom",
+      "created_at": "2026-05-01T14:21:35.549325+00:00",
+      "updated_at": "2026-05-01T14:21:35.549325+00:00"
+    },
+    "preset_596c615b3802": {
+      "id": "preset_596c615b3802",
+      "name": "总图提示词",
+      "category": "模板",
+      "prompt": "我需要针对这篇论文进行科研绘图，将其中的要点总结，针对图1，生成精细化的科研绘图提示词，并生成用于gpt-image-2可用的提示词，绘图提示词风格参考angew期刊的风格，",
+      "reference_image": "",
+      "keywords": [
+        "总图"
+      ],
+      "source": "custom",
+      "created_at": "2026-05-01T14:22:32.536905+00:00",
+      "updated_at": "2026-05-01T14:22:32.536905+00:00"
+    },
+    "preset_b7637d56f00b": {
+      "id": "preset_b7637d56f00b",
+      "name": "精细生图（线稿+色稿）",
+      "category": "模板",
+      "prompt": "请你根据以下提示词，还原图片1线稿，并且根据图片2物体固有色进行上色，最后生成图片",
+      "reference_image": "",
+      "keywords": [
+        "线稿",
+        "色稿合并"
+      ],
+      "source": "custom",
+      "created_at": "2026-05-01T14:23:07.937243+00:00",
+      "updated_at": "2026-05-01T14:23:07.937243+00:00"
+    }
+  }
+}

@@ -1,0 +1,1 @@
+"""Research Canvas AI backend."""

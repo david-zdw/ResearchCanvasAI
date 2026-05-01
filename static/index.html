@@ -1,0 +1,513 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Research Canvas AI</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <aside class="control-panel left-panel">
+        <header class="app-brand">
+          <div class="brand-mark">RC</div>
+          <div class="brand-text">
+            <h1>Research Canvas</h1>
+            <p>&#x8bba;&#x6587;&#x5230;&#x79d1;&#x7814;&#x56fe;&#x7684;&#x7cbe;&#x5bc6;&#x753b;&#x677f;</p>
+          </div>
+          <button id="openSettingsBtn" class="icon-button settings-button" title="API settings" aria-label="API settings">API</button>
+        </header>
+
+        <section class="workflow-card node-factory">
+          <div class="section-kicker">
+            <span>00</span>
+            <strong>&#x8282;&#x70b9;&#x5de5;&#x5382;</strong>
+            <small>NODE</small>
+          </div>
+          <div class="node-palette">
+            <button id="uploadImageNodeBtn">&#x4e0a;&#x4f20;&#x56fe;&#x7247;&#x8282;&#x70b9;</button>
+            <button id="addPromptNodeBtn">&#x63d0;&#x793a;&#x8bcd;&#x8282;&#x70b9;</button>
+            <button id="addT2INodeBtn">&#x6587;&#x751f;&#x56fe;&#x8282;&#x70b9;</button>
+            <button id="addI2INodeBtn">&#x56fe;&#x751f;&#x56fe;&#x8282;&#x70b9;</button>
+            <button id="addReversePromptNodeBtn">&#x53cd;&#x63a8;&#x63d0;&#x793a;&#x8bcd;&#x8282;&#x70b9;</button>
+          </div>
+        </section>
+
+        <section class="workflow-card compact-flow">
+          <div class="section-kicker">
+            <span>01</span>
+            <strong>&#x8bba;&#x6587;&#x8bfb;&#x53d6;</strong>
+            <small id="paperStatus">&#x672a;&#x4e0a;&#x4f20;</small>
+          </div>
+          <label class="drop-zone" for="paperInput" id="dropZone">
+            <input id="paperInput" type="file" accept=".pdf,.txt,.md,.docx" />
+            <span class="drop-eyebrow">PAPER INTAKE</span>
+            <strong>&#x4e0a;&#x4f20;&#x8bba;&#x6587;</strong>
+            <em>PDF / DOCX / TXT / MD</em>
+          </label>
+          <div class="paper-card hidden" id="paperCard">
+            <h2 id="paperTitle">Untitled</h2>
+            <p id="paperMeta"></p>
+            <div id="keywordList" class="keyword-list"></div>
+          </div>
+        </section>
+
+        <section class="workflow-card">
+          <div class="section-kicker">
+            <span>02</span>
+            <strong>&#x63d0;&#x793a;&#x8bcd;&#x751f;&#x6210;</strong>
+            <small id="promptStatus">&#x5f85;&#x751f;&#x6210;</small>
+          </div>
+          <label class="field">
+            <span>&#x7ed8;&#x56fe;&#x76ee;&#x6807;</span>
+            <textarea id="goalInput" rows="3" placeholder="&#x4f8b;&#x5982;&#xff1a;&#x751f;&#x6210;&#x673a;&#x5236;&#x793a;&#x610f;&#x56fe;&#xff0c;&#x5c55;&#x793a;&#x5b9e;&#x9a8c;&#x6d41;&#x7a0b;&#x3001;&#x5173;&#x952e;&#x53d8;&#x91cf;&#x548c;&#x4e3b;&#x8981;&#x7ed3;&#x8bba;"></textarea>
+          </label>
+          <div class="split-fields">
+            <label class="field">
+              <span>&#x56fe;&#x7c7b;&#x578b;</span>
+              <select id="figureType">
+                <option>多面板科研示意图</option>
+                <option>流程图</option>
+                <option>机制插图</option>
+                <option>图形摘要</option>
+                <option>通路图</option>
+                <option>实验装置图</option>
+              </select>
+            </label>
+            <label class="field">
+              <span>&#x89c6;&#x89c9;&#x98ce;&#x683c;</span>
+              <select id="styleInput">
+                <option>Nature 风格的干净矢量科研插图</option>
+                <option>Cell 期刊图形摘要风格</option>
+                <option>极简白底线稿</option>
+                <option>高对比度基金标书图</option>
+              </select>
+            </label>
+            <label class="field">
+              <span>&#x63d0;&#x793a;&#x8bcd;&#x6a21;&#x578b;</span>
+              <select id="promptModelSelect"></select>
+            </label>
+          </div>
+          <button class="primary wide-button" id="generatePromptBtn">&#x751f;&#x6210;&#x79d1;&#x7814;&#x7ed8;&#x56fe;&#x63d0;&#x793a;&#x8bcd;</button>
+          <label class="field">
+            <span>&#x63d0;&#x793a;&#x8bcd;</span>
+            <textarea id="promptOutput" rows="5" placeholder="&#x751f;&#x6210;&#x540e;&#x7684;&#x63d0;&#x793a;&#x8bcd;&#x4f1a;&#x51fa;&#x73b0;&#x5728;&#x8fd9;&#x91cc;&#xff0c;&#x4f60;&#x53ef;&#x4ee5;&#x76f4;&#x63a5;&#x4fee;&#x6539;&#x3002;"></textarea>
+          </label>
+          <div class="action-grid">
+            <button id="rewritePromptBtn">&#x4f18;&#x5316;&#x63d0;&#x793a;&#x8bcd;</button>
+            <button id="addPromptNoteBtn">&#x653e;&#x5230;&#x753b;&#x5e03;</button>
+            <button id="openPresetBtn" type="button">&#x63d0;&#x793a;&#x8bcd;&#x9884;&#x8bbe;</button>
+          <button id="promptRepoBtn" type="button">&#x63d0;&#x793a;&#x8bcd;&#x4ed3;&#x5e93;</button>
+            <button id="drawingRefBtn" type="button">&#x7ed8;&#x56fe;&#x53c2;&#x8003;</button>
+          </div>
+        </section>
+      </aside>
+
+      <section class="workspace">
+        <header class="command-bar">
+          <div class="tool-cluster" aria-label="canvas tools">
+            <button data-tool="select" class="tool-button active" title="Select" aria-label="Select">↖</button>
+            <button data-tool="pan" class="tool-button" title="Pan" aria-label="Pan">+</button>
+            <button id="addTextBtn" class="tool-button" title="Text" aria-label="Text">T</button>
+            <button id="addImageNodeBtn" class="tool-button" title="Image node" aria-label="Image node">I</button>
+            <button id="uploadImageToolbarBtn" class="tool-button" title="Upload image" aria-label="Upload image">U</button>
+            <button id="zoomOutBtn" class="tool-button" title="Zoom out" aria-label="Zoom out">-</button>
+            <button id="zoomInBtn" class="tool-button" title="Zoom in" aria-label="Zoom in">+</button>
+            <button id="fitBtn" class="tool-button" title="Reset view" aria-label="Reset view">0</button>
+          </div>
+          <div class="generation-controls">
+            <select id="toolbarRatio" title="Aspect ratio" aria-label="Aspect ratio">
+              <option value="auto">Auto</option>
+              <option value="1:1">1:1</option>
+              <option value="2:3">2:3</option>
+              <option value="3:2">3:2</option>
+              <option value="3:4">3:4</option>
+              <option value="4:3">4:3</option>
+              <option value="9:16">9:16</option>
+              <option value="16:9">16:9</option>
+            </select>
+            <select id="toolbarResolution" title="Resolution tier" aria-label="Resolution tier">
+              <option value="auto">Auto</option>
+              <option value="standard" selected>Standard</option>
+              <option value="2k">2K</option>
+              <option value="4k">4K</option>
+            </select>
+            <output id="toolbarSizeLabel" class="toolbar-size-label">Auto</output>
+            <button class="primary" id="generateImageBtn">&#x751f;&#x6210;&#x79d1;&#x7814;&#x56fe;</button>
+            <button id="relayoutBtn">&#x91cd;&#x6392;&#x7248;</button>
+            <button id="openWorkflowBtn">&#x5de5;&#x7a0b;</button>
+            <button id="saveCanvasBtn">&#x4fdd;&#x5b58;&#x5de5;&#x7a0b;</button>
+          </div>
+        </header>
+
+        <div class="canvas-wrap" id="canvasWrap">
+          <div class="canvas-grid"></div>
+          <div class="canvas-vignette"></div>
+          <svg class="link-layer" id="linkLayer"></svg>
+          <div class="canvas-world" id="canvasWorld"></div>
+        </div>
+
+        <footer class="statusbar">
+          <span id="canvasStatus">&#x753b;&#x5e03;&#x5c31;&#x7eea;</span>
+          <span id="apiStatus">API &#x672a;&#x914d;&#x7f6e;</span>
+          <span id="zoomLabel">100%</span>
+        </footer>
+      </section>
+
+      <aside class="control-panel right-panel">
+        <section class="workflow-card inspector-card">
+          <div class="section-kicker">
+            <span>03</span>
+            <strong>&#x5bf9;&#x8c61;&#x68c0;&#x67e5;&#x5668;</strong>
+            <small id="selectionStatus">&#x672a;&#x9009;&#x4e2d;</small>
+          </div>
+          <label class="field">
+            <span>&#x6807;&#x9898;</span>
+            <input id="selectedTitle" placeholder="&#x5bf9;&#x8c61;&#x6807;&#x9898;" />
+          </label>
+          <label class="field">
+            <span>&#x8282;&#x70b9;&#x6a21;&#x578b;</span>
+            <select id="selectedModel"></select>
+          </label>
+          <label class="field">
+            <span>&#x7f16;&#x8f91;&#x6307;&#x4ee4;</span>
+            <textarea id="editInstruction" rows="3" placeholder="&#x4f8b;&#x5982;&#xff1a;&#x628a;&#x53f3;&#x4fa7;&#x6539;&#x6210;&#x4e09;&#x6b65;&#x6d41;&#x7a0b;&#xff0c;&#x4fdd;&#x7559;&#x6807;&#x7b7e;&#x548c;&#x914d;&#x8272;&#x3002;"></textarea>
+          </label>
+          <label class="field">
+            <span>&#x653e;&#x5927;&#x500d;&#x6570;</span>
+            <select id="upscaleScale">
+              <option value="2">2x</option>
+              <option value="3">3x</option>
+              <option value="4" selected>4x</option>
+            </select>
+          </label>
+          <div class="action-grid">
+            <button id="editImageBtn">&#x79d1;&#x7814;&#x56fe;&#x7f16;&#x8f91;</button>
+            <button id="repaintBtn">&#x5c40;&#x90e8;&#x91cd;&#x7ed8;</button>
+            <button id="upscaleBtn">&#x9ad8;&#x6e05;&#x653e;&#x5927;</button>
+            <button id="vectorizeBtn">&#x8f6c;&#x77e2;&#x91cf;</button>
+          </div>
+        </section>
+
+        <section class="workflow-card compact-card">
+          <div class="section-kicker">
+            <span>04</span>
+            <strong>&#x8bba;&#x6587;&#x6458;&#x8981;</strong>
+            <small id="summaryStatus">&#x7b49;&#x5f85;&#x4e0a;&#x4f20;</small>
+          </div>
+          <div class="summary-box" id="summaryBox"></div>
+        </section>
+
+        <section class="workflow-card compact-card">
+          <div class="section-kicker">
+            <span>05</span>
+            <strong>&#x56fe;&#x6ce8;&#x5019;&#x9009;</strong>
+            <small id="captionCount">0</small>
+          </div>
+          <div class="caption-list" id="captionList"></div>
+        </section>
+      </aside>
+    </main>
+
+    <dialog class="settings-dialog" id="settingsDialog">
+      <form method="dialog" class="settings-card">
+        <header class="settings-head">
+          <div>
+            <span class="dialog-kicker">MODEL GATEWAY</span>
+            <h2>API &#x8bbe;&#x7f6e;</h2>
+            <p id="settingsHint">&#x4fdd;&#x5b58;&#x5230;&#x672c;&#x5730; .env&#xff0c;&#x5f53;&#x524d;&#x670d;&#x52a1;&#x4f1a;&#x7acb;&#x5373;&#x4f7f;&#x7528;&#x65b0;&#x914d;&#x7f6e;&#x3002;</p>
+          </div>
+          <button class="icon-button" id="closeSettingsBtn" value="cancel" title="Close" aria-label="Close">x</button>
+        </header>
+        <div class="settings-grid">
+          <label class="field span-2">
+            <span>&#x4f9b;&#x5e94;&#x5546;</span>
+            <select id="providerSelect"></select>
+          </label>
+          <div class="action-grid span-2">
+            <button type="button" id="newProviderBtn">&#x65b0;&#x589e;&#x4f9b;&#x5e94;&#x5546;</button>
+            <button type="button" id="deleteProviderBtn">&#x5220;&#x9664;&#x4f9b;&#x5e94;&#x5546;</button>
+            <button type="button" id="clearProviderKeyBtn">&#x6e05;&#x7a7a; Key</button>
+          </div>
+          <label class="field span-2">
+            <span>&#x4f9b;&#x5e94;&#x5546;&#x540d;&#x79f0;</span>
+            <input id="providerNameInput" placeholder="OpenAI / 自定义中转 / 实验供应商" />
+          </label>
+          <label class="field span-2">
+            <span>API Key</span>
+            <input id="apiKeyInput" type="password" autocomplete="off" placeholder="&#x7559;&#x7a7a;&#x8868;&#x793a;&#x4e0d;&#x4fee;&#x6539;&#xff0c;&#x8f93;&#x5165;&#x65b0; Key &#x4f1a;&#x66ff;&#x6362;" />
+          </label>
+          <label class="field span-2">
+            <span>Base URL</span>
+            <input id="baseUrlInput" placeholder="https://api.openai.com" />
+          </label>
+          <label class="field">
+            <span>&#x6587;&#x672c;&#x6a21;&#x578b;</span>
+            <input id="textModelInput" placeholder="gpt-4.1-mini" />
+          </label>
+          <label class="field">
+            <span>&#x56fe;&#x7247;&#x6a21;&#x578b;</span>
+            <input id="imageModelInput" placeholder="gpt-image-2" />
+          </label>
+          <label class="field">
+            <span>&#x53ef;&#x7528;&#x6587;&#x672c;&#x6a21;&#x578b;</span>
+            <textarea id="textModelsInput" rows="4" placeholder="gpt-5.5&#10;gpt-4.1-mini"></textarea>
+          </label>
+          <label class="field">
+            <span>&#x53ef;&#x7528;&#x56fe;&#x7247;&#x6a21;&#x578b;</span>
+            <textarea id="imageModelsInput" rows="4" placeholder="gpt-image-2&#10;gpt-image-1.5"></textarea>
+          </label>
+        </div>
+        <footer class="settings-actions">
+          <span id="settingsStatus">&#x8bfb;&#x53d6;&#x4e2d;</span>
+          <button type="button" id="syncModelsBtn">&#x540c;&#x6b65;&#x4f9b;&#x5e94;&#x5546;&#x6a21;&#x578b;</button>
+          <button type="button" class="primary" id="saveSettingsBtn">&#x4fdd;&#x5b58;&#x8bbe;&#x7f6e;</button>
+        </footer>
+      </form>
+    </dialog>
+
+    <dialog class="settings-dialog preset-dialog" id="presetDialog">
+      <form method="dialog" class="settings-card preset-shell">
+        <header class="settings-head">
+          <div>
+            <span class="dialog-kicker">PROMPT PRESETS</span>
+            <h2>&#x63d0;&#x793a;&#x8bcd;&#x9884;&#x8bbe;</h2>
+            <p>&#x6309;&#x5206;&#x7c7b;&#x6d4f;&#x89c8;&#x4fe1;&#x606f;&#x7d20;&#x6750;&#xff0c;&#x5305;&#x542b;&#x540d;&#x79f0;&#x3001;&#x63d0;&#x793a;&#x8bcd;&#x3001;&#x53c2;&#x8003;&#x56fe;&#x548c;&#x5173;&#x952e;&#x8bcd;&#x3002;</p>
+          </div>
+          <button class="icon-button" id="closePresetBtn" value="cancel" title="Close" aria-label="Close">x</button>
+        </header>
+        <div class="preset-toolbar">
+          <label class="field preset-search">
+            <span>&#x641c;&#x7d22;</span>
+            <input id="presetSearchInput" placeholder="&#x6309;&#x540d;&#x79f0;&#x3001;&#x5173;&#x952e;&#x8bcd;&#x6216;&#x63d0;&#x793a;&#x8bcd;&#x641c;&#x7d22;" />
+          </label>
+          <div class="preset-meta">
+            <span id="presetCurrentCategory">&#x5168;&#x90e8;</span>
+            <strong id="presetLibraryCount">0</strong>
+          </div>
+        </div>
+        <div class="preset-grid">
+          <aside class="preset-sidebar">
+            <div id="presetCategoryList" class="preset-category-list"></div>
+          </aside>
+          <section class="preset-main">
+            <div id="presetCardGrid" class="preset-card-grid"></div>
+          </section>
+          <aside class="preset-editor">
+            <button type="button" class="preset-preview" id="presetPreviewButton" title="点击放大参考图">
+              <img id="presetPreviewImage" alt="preset reference" hidden />
+              <div id="presetPreviewFallback" class="preset-preview-fallback">&#x6682;&#x65e0;&#x53c2;&#x8003;&#x56fe;</div>
+            </button>
+            <input type="hidden" id="presetSelect" />
+            <label class="field">
+              <span>&#x540d;&#x79f0;</span>
+              <input id="presetNameInput" placeholder="Nature schematic base" />
+            </label>
+            <label class="field">
+              <span>&#x5206;&#x7c7b;</span>
+              <input id="presetCategoryInput" placeholder="&#x673a;&#x5236;&#x56fe;&#x89e3;" />
+            </label>
+            <label class="field">
+              <span>&#x5173;&#x952e;&#x8bcd;</span>
+              <input id="presetKeywordsInput" placeholder="&#x5173;&#x952e;&#x8bcd;&#x7528;&#x3001;&#x5206;&#x9694;" />
+            </label>
+            <label class="field">
+              <span>&#x53c2;&#x8003;&#x56fe;</span>
+              <input id="presetReferenceInput" placeholder="https://..." />
+            </label>
+            <label class="field">
+              <span>&#x63d0;&#x793a;&#x8bcd;</span>
+              <textarea id="presetPromptInput" rows="10" placeholder="Describe figure style, constraints, labels, color, composition..."></textarea>
+            </label>
+          </aside>
+        </div>
+        <footer class="settings-actions">
+          <span id="presetStatus">&#x672c;&#x5730;&#x4fdd;&#x5b58;</span>
+          <button type="button" id="deletePresetBtn">&#x5220;&#x9664;</button>
+          <button type="button" id="newPresetBtn">&#x65b0;&#x589e;&#x9884;&#x8bbe;</button>
+          <button type="button" id="savePresetBtn">&#x4fdd;&#x5b58;&#x9884;&#x8bbe;</button>
+          <button type="button" class="primary" id="addPresetNodeBtn">&#x52a0;&#x5165;&#x753b;&#x5e03;</button>
+        </footer>
+      </form>
+    </dialog>
+
+    <dialog class="image-lightbox" id="imageLightbox">
+      <form method="dialog" class="image-lightbox-card">
+        <header class="image-lightbox-head">
+          <strong id="imageLightboxTitle">&#x53c2;&#x8003;&#x56fe;</strong>
+          <button class="icon-button" id="closeImageLightboxBtn" value="cancel" title="Close" aria-label="Close">x</button>
+        </header>
+        <div class="image-lightbox-stage">
+          <img id="imageLightboxImage" alt="large reference" />
+        </div>
+      </form>
+    </dialog>
+
+    <dialog class="repo-dialog" id="promptRepoDialog">
+      <form method="dialog" class="repo-card">
+        <header class="repo-head">
+          <div>
+            <span class="dialog-kicker">PROMPT REPO</span>
+            <h2>&#x63d0;&#x793a;&#x8bcd;&#x4ed3;&#x5e93;</h2>
+            <p>&#x9009;&#x4e00;&#x4e2a;&#x4ed3;&#x5e93;&#x76f4;&#x63a5;&#x6253;&#x5f00;&#xff0c;&#x67e5;&#x770b;&#x66f4;&#x591a; gpt-image-2 &#x63d0;&#x793a;&#x8bcd;&#x8d44;&#x6e90;&#x3002;</p>
+          </div>
+          <button class="icon-button" id="closePromptRepoBtn" value="cancel" title="Close" aria-label="Close">x</button>
+        </header>
+        <div class="repo-list">
+          <a class="repo-link" href="https://github.com/xianyu110/awesome-gptimage2" target="_blank" rel="noopener noreferrer">
+            <strong>awesome-gptimage2</strong>
+            <span>https://github.com/xianyu110/awesome-gptimage2</span>
+          </a>
+          <a class="repo-link" href="https://github.com/EvoLinkAI/awesome-gpt-image-2-prompts" target="_blank" rel="noopener noreferrer">
+            <strong>awesome-gpt-image-2-prompts</strong>
+            <span>https://github.com/EvoLinkAI/awesome-gpt-image-2-prompts</span>
+          </a>
+        </div>
+      </form>
+    </dialog>
+
+    <dialog class="repo-dialog" id="drawingRefDialog">
+      <form method="dialog" class="repo-card">
+        <header class="repo-head">
+          <div>
+            <span class="dialog-kicker">DRAWING REFS</span>
+            <h2>&#x7ed8;&#x56fe;&#x53c2;&#x8003;</h2>
+            <p>&#x5206;&#x4e3a;&#x914d;&#x8272;&#x53c2;&#x8003;&#x548c;&#x514d;&#x8d39;&#x7d20;&#x6750;&#x4e24;&#x7c7b;&#x3002;</p>
+          </div>
+          <button class="icon-button" id="closeDrawingRefBtn" value="cancel" title="Close" aria-label="Close">x</button>
+        </header>
+        <div class="repo-section">
+          <h3>&#x914d;&#x8272;&#x53c2;&#x8003;</h3>
+          <div class="repo-list">
+            <a class="repo-link" href="https://mycolor.space/" target="_blank" rel="noopener noreferrer">
+              <strong>mycolor.space</strong>
+              <span>https://mycolor.space/</span>
+            </a>
+          </div>
+        </div>
+        <div class="repo-section">
+          <h3>&#x514d;&#x8d39;&#x7d20;&#x6750;</h3>
+          <div class="repo-list">
+            <a class="repo-link" href="https://www.magnific.com/" target="_blank" rel="noopener noreferrer">
+              <strong>Magnific</strong>
+              <span>https://www.magnific.com/</span>
+            </a>
+            <a class="repo-link" href="https://www.biorender.com/" target="_blank" rel="noopener noreferrer">
+              <strong>BioRender</strong>
+              <span>https://www.biorender.com/</span>
+            </a>
+            <a class="repo-link" href="https://www.vecteezy.com/" target="_blank" rel="noopener noreferrer">
+              <strong>Vecteezy</strong>
+              <span>https://www.vecteezy.com/</span>
+            </a>
+            <a class="repo-link" href="https://scidraw.io/" target="_blank" rel="noopener noreferrer">
+              <strong>Scidraw</strong>
+              <span>https://scidraw.io/</span>
+            </a>
+            <a class="repo-link" href="https://smart.servier.com/" target="_blank" rel="noopener noreferrer">
+              <strong>Servier Medical Art</strong>
+              <span>https://smart.servier.com/</span>
+            </a>
+          </div>
+        </div>
+      </form>
+    </dialog>
+
+    <dialog class="settings-dialog workflow-dialog" id="workflowDialog">
+      <form method="dialog" class="settings-card">
+        <header class="settings-head">
+          <div>
+            <span class="dialog-kicker">WORKFLOW VAULT</span>
+            <h2>&#x5de5;&#x7a0b;&#x4fdd;&#x5b58;&#x4e0e;&#x52a0;&#x8f7d;</h2>
+            <p>&#x5c06;&#x5f53;&#x524d;&#x753b;&#x5e03;&#x3001;&#x8282;&#x70b9;&#x3001;&#x8fde;&#x7ebf;&#x548c;&#x89c6;&#x56fe;&#x4fdd;&#x5b58;&#x5230;&#x672c;&#x5730; data/state.json&#xff0c;&#x91cd;&#x542f;&#x540e;&#x53ef;&#x7ee7;&#x7eed;&#x5de5;&#x4f5c;&#x3002;</p>
+          </div>
+          <button class="icon-button" id="closeWorkflowBtn" value="cancel" title="Close" aria-label="Close">x</button>
+        </header>
+        <div class="preset-grid">
+          <label class="field">
+            <span>&#x5df2;&#x4fdd;&#x5b58;&#x7684;&#x5de5;&#x7a0b;</span>
+            <select id="workflowSelect" size="8"></select>
+          </label>
+          <div class="preset-editor">
+            <label class="field">
+              <span>&#x5de5;&#x7a0b;&#x540d;&#x79f0;</span>
+              <input id="workflowTitleInput" placeholder="Research canvas" />
+            </label>
+            <div class="summary-box" id="workflowMetaBox"></div>
+          </div>
+        </div>
+        <footer class="settings-actions">
+          <span id="workflowStatus">&#x672c;&#x5730;&#x5de5;&#x7a0b;</span>
+          <button type="button" id="newWorkflowBtn">&#x65b0;&#x5efa;&#x5de5;&#x7a0b;</button>
+          <button type="button" id="loadWorkflowBtn">&#x52a0;&#x8f7d;&#x5de5;&#x7a0b;</button>
+          <button type="button" class="primary" id="saveWorkflowBtn">&#x4fdd;&#x5b58;&#x5de5;&#x7a0b;</button>
+        </footer>
+      </form>
+    </dialog>
+
+    <dialog class="settings-dialog crop-dialog" id="cropDialog">
+      <form method="dialog" class="settings-card crop-card">
+        <header class="settings-head">
+          <div>
+            <span class="dialog-kicker" id="cropDialogKicker">SCIENTIFIC IMAGE EDITOR</span>
+            <h2 id="cropDialogTitle">&#x79d1;&#x7814;&#x56fe;&#x5c40;&#x90e8;&#x7f16;&#x8f91;</h2>
+            <p id="cropDialogDescription">&#x5728;&#x56fe;&#x7247;&#x4e0a;&#x7528;&#x534a;&#x900f;&#x660e;&#x7ea2;&#x8272;&#x6d82;&#x62b9;&#x6216;&#x6846;&#x9009;&#x9700;&#x8981;&#x4fee;&#x6539;&#x7684;&#x533a;&#x57df;&#xff0c;&#x7136;&#x540e;&#x7528;&#x7f16;&#x8f91;&#x6307;&#x4ee4;&#x8fdb;&#x884c;&#x5c40;&#x90e8;&#x91cd;&#x7ed8;&#x3002;</p>
+          </div>
+          <button class="icon-button" id="closeCropBtn" value="cancel" title="Close" aria-label="Close">x</button>
+        </header>
+        <div class="editor-toolbar" id="editorToolbar">
+          <div class="segmented-control" role="group" aria-label="Mask mode">
+            <button type="button" class="active" id="editorBrushBtn">&#x753b;&#x7b14;&#x8499;&#x7248;</button>
+            <button type="button" id="editorRectBtn">&#x77e9;&#x5f62;&#x6846;&#x9009;</button>
+          </div>
+          <label class="editor-slider">
+            <span>&#x753b;&#x7b14;&#x5927;&#x5c0f;</span>
+            <input id="editorBrushSize" type="range" min="8" max="96" value="32" />
+            <output id="editorBrushSizeLabel">32 px</output>
+          </label>
+          <label class="field editor-prompt-field">
+            <span>&#x5c40;&#x90e8;&#x91cd;&#x7ed8;&#x6307;&#x4ee4;</span>
+            <textarea id="editorInstruction" rows="2" placeholder="&#x4f8b;&#x5982;&#xff1a;&#x5c06;&#x8fd9;&#x4e00;&#x533a;&#x57df;&#x6539;&#x6210;&#x66f4;&#x6e05;&#x6670;&#x7684;&#x4e09;&#x6b65;&#x673a;&#x5236;&#x6d41;&#x7a0b;&#xff0c;&#x4fdd;&#x7559;&#x539f;&#x6709;&#x914d;&#x8272;&#x548c;&#x6807;&#x7b7e;&#x5c42;&#x7ea7;&#x3002;"></textarea>
+          </label>
+        </div>
+        <div class="crop-stage-wrap">
+          <div class="crop-stage" id="cropStage">
+            <img id="cropImage" alt="Crop source" />
+            <canvas id="maskCanvas" class="mask-canvas"></canvas>
+            <div class="crop-selection" id="cropSelection"></div>
+          </div>
+        </div>
+        <footer class="settings-actions">
+          <span id="cropStatus">&#x6d82;&#x62b9;&#x7ea2;&#x8272;&#x533a;&#x57df;&#x6216;&#x6846;&#x9009;&#x9700;&#x8981;&#x4fee;&#x6539;&#x7684;&#x90e8;&#x5206;</span>
+          <button type="button" id="resetCropBtn">&#x6e05;&#x7a7a;&#x6807;&#x8bb0;</button>
+          <button type="button" id="saveCropBtn">&#x4fdd;&#x5b58;&#x4e3a;&#x53c2;&#x8003;&#x56fe;&#x8282;&#x70b9;</button>
+          <button type="button" class="primary" id="runMaskedRepaintBtn">&#x6267;&#x884c;&#x5c40;&#x90e8;&#x91cd;&#x7ed8;</button>
+        </footer>
+      </form>
+    </dialog>
+
+    <input id="imageInput" class="hidden-file" type="file" accept="image/*" multiple />
+
+    <template id="canvasItemTemplate">
+      <article class="canvas-item">
+        <div class="item-head">
+          <div class="node-title-stack">
+            <strong class="item-title"></strong>
+            <span class="node-type-label"></span>
+          </div>
+          <select class="node-model-select" data-action="model"></select>
+          <button class="mini-button" data-action="delete" title="Delete" aria-label="Delete">x</button>
+        </div>
+        <button class="port port-in" data-port="input" title="Input"></button>
+        <button class="port port-out" data-port="output" title="Output"></button>
+        <div class="item-body"></div>
+        <div class="node-io">
+          <button class="node-link-btn" data-port="input">IN</button>
+          <button class="node-link-btn" data-port="output">OUT</button>
+        </div>
+      </article>
+    </template>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
