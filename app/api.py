@@ -15,7 +15,7 @@ from .services.canvas_ops import quick_relayout, vectorize_bitmap_to_svg_file
 from .services.image_provider import edit_image, generate_image, upscale_image
 from .services.openai_compat import get_json
 from .services.paper_reader import analyze_paper, extract_text
-from .services.prompting import generate_prompt, improve_prompt, reverse_image_prompt
+from .services.prompting import generate_prompt, improve_prompt, reverse_image_prompt, translate_prompt
 from .store import get, load_state, new_id, now_iso, save_state, upsert
 
 
@@ -288,6 +288,16 @@ def rewrite_prompt(payload: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+def translate_prompt_text(payload: dict[str, Any]) -> dict[str, Any]:
+    return {
+        "prompt": translate_prompt(
+            payload.get("prompt", ""),
+            direction=payload.get("direction", "auto"),
+            model=payload.get("model") or payload.get("text_model"),
+        )
+    }
+
+
 def reverse_prompt(payload: dict[str, Any]) -> dict[str, Any]:
     image = _lookup_image_path(payload.get("image_id"))
     if not image:
@@ -392,7 +402,13 @@ def vectorize_image(payload: dict[str, Any]) -> dict[str, Any]:
 
 
 def relayout(payload: dict[str, Any]) -> dict[str, Any]:
-    return {"items": quick_relayout(payload.get("items", []), payload.get("mode", "grid"))}
+    return {
+        "items": quick_relayout(
+            payload.get("items", []),
+            payload.get("mode", "grid"),
+            payload.get("links", []),
+        )
+    }
 
 
 def save_canvas(payload: dict[str, Any]) -> dict[str, Any]:

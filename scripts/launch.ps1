@@ -2,6 +2,7 @@ $ErrorActionPreference = "Stop"
 
 $Root = Split-Path -Parent $PSScriptRoot
 $Python = Join-Path $Root ".local-python\python\python.exe"
+$Pythonw = Join-Path $Root ".local-python\python\pythonw.exe"
 $DataDir = Join-Path $Root "data"
 $LogDir = Join-Path $DataDir "logs"
 $PidFile = Join-Path $DataDir "server.pid"
@@ -44,18 +45,22 @@ if (-not (Test-Path $Python)) {
     exit 1
 }
 
+$ServerPython = $Python
+if (Test-Path $Pythonw) {
+    $ServerPython = $Pythonw
+}
+
 $env:PYTHONUNBUFFERED = "1"
+[Environment]::SetEnvironmentVariable("PATH", $null, "Process")
 
 if (-not (Test-AppReady)) {
     $existing = Get-SavedProcess
     if (-not $existing) {
         $process = Start-Process `
             -WindowStyle Hidden `
-            -FilePath $Python `
+            -FilePath $ServerPython `
             -ArgumentList "server.py" `
             -WorkingDirectory $Root `
-            -RedirectStandardOutput $OutLog `
-            -RedirectStandardError $ErrLog `
             -PassThru
         Set-Content -Path $PidFile -Value $process.Id -Encoding ASCII
     }
@@ -70,7 +75,11 @@ if (-not (Test-AppReady)) {
 }
 
 if (Test-AppReady) {
-    Start-Process $Url
+    try {
+        Start-Process $Url
+    } catch {
+        Write-Host "Research Canvas AI is running at $Url"
+    }
 } else {
     $message = "Research Canvas AI did not start in time.`n`nLogs:`n$OutLog`n$ErrLog"
     [System.Windows.Forms.MessageBox]::Show($message, "Research Canvas AI", "OK", "Warning") | Out-Null

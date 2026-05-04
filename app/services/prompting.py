@@ -74,6 +74,79 @@ def improve_prompt(prompt: str, instruction: str, model: str | None = None) -> d
         }
 
 
+def translate_prompt(prompt: str, direction: str = "auto", model: str | None = None) -> dict[str, Any]:
+    prompt = str(prompt or "").strip()
+    if not prompt:
+        raise ValueError("Prompt is required")
+    target_language = _translation_target_language(prompt, direction)
+    try:
+        response = post_json(
+            "/v1/chat/completions",
+            {
+                "model": model or config.TEXT_MODEL,
+                "messages": [
+                    {
+                        "role": "system",
+                        "content": (
+                            "You are a strict translation engine for image-generation prompts. "
+                            "Translate the user's prompt to the requested target language only. "
+                            "Do not rewrite, polish, expand, summarize, interpret, add style words, add subjects, "
+                            "add camera details, add quality terms, or remove any original meaning. "
+                            "Preserve line breaks, punctuation, numbers, labels, scientific terms, and formatting as much as possible. "
+                            "If a phrase is short or simple, keep the translation equally short and simple. "
+                            "Return strict JSON with keys: title, prompt, rationale."
+                        ),
+                    },
+                    {
+                        "role": "user",
+                        "content": json.dumps(
+                            {
+                                "target_language": target_language,
+                                "prompt": prompt,
+                                "rules": [
+                                    "Translate only.",
+                                    "Do not add details not present in the source.",
+                                    "Do not optimize for image generation.",
+                                    "Do not convert simple prompts into long descriptive prompts.",
+                                ],
+                            },
+                            ensure_ascii=False,
+                        ),
+                    },
+                ],
+                "temperature": 0,
+                "response_format": {"type": "json_object"},
+            },
+        )
+        parsed = json.loads(response["choices"][0]["message"]["content"])
+        translated = str(parsed.get("prompt") or "").strip()
+        if not translated:
+            raise ValueError("Model returned an empty prompt")
+        return {
+            "title": parsed.get("title") or "Translated prompt",
+            "prompt": translated,
+            "rationale": parsed.get("rationale") or "",
+            "source": "api",
+        }
+    except Exception as exc:
+        return {
+            "title": "Translated prompt",
+            "prompt": prompt,
+            "rationale": "Local fallback kept the original prompt because translation failed.",
+            "provider_note": f"Local fallback used: {exc}",
+            "source": "local",
+        }
+
+
+def _translation_target_language(prompt: str, direction: str) -> str:
+    normalized = str(direction or "auto").strip().lower()
+    if normalized in {"en-zh", "english-to-chinese", "to_zh", "zh"}:
+        return "Chinese"
+    if normalized in {"zh-en", "chinese-to-english", "to_en", "en"}:
+        return "English"
+    return "English" if re.search(r"[\u4e00-\u9fff]", prompt) else "Chinese"
+
+
 def reverse_image_prompt(image_path: Path, instruction: str = "", model: str | None = None) -> dict[str, Any]:
     prompt_instruction = instruction or (
         "Reverse-engineer this scientific image into an editing-ready image generation prompt. "

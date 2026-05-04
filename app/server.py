@@ -56,6 +56,7 @@ class ResearchCanvasHandler(SimpleHTTPRequestHandler):
             routes = {
                 "/api/prompts/generate": api.make_prompt,
                 "/api/prompts/rewrite": api.rewrite_prompt,
+                "/api/prompts/translate": api.translate_prompt_text,
                 "/api/prompts/reverse": api.reverse_prompt,
                 "/api/prompts/presets/save": api.save_prompt_preset,
                 "/api/prompts/presets/delete": api.delete_prompt_preset,

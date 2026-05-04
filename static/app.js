@@ -60,16 +60,22 @@ const text = {
   uploadImageFailed: "\u56fe\u7247\u4e0a\u4f20\u5931\u8d25",
   t2iNode: "\u6587\u751f\u56fe\u8282\u70b9",
   promptNode: "\u63d0\u793a\u8bcd\u8282\u70b9",
+  translatePromptNode: "\u63d0\u793a\u8bcd\u7ffb\u8bd1\u8282\u70b9",
   outputArmed: "\u5df2\u9009\u4e2d\u8f93\u51fa\u7aef\u53e3\uff0c\u8bf7\u70b9\u51fb\u4e0b\u6e38\u8282\u70b9\u7684 IN\u3002",
   linked: "\u8282\u70b9\u5df2\u8fde\u63a5",
   imageToImage: "\u56fe\u751f\u56fe",
   textToImage: "\u6587\u751f\u56fe",
+  translatePrompt: "\u63d0\u793a\u8bcd\u7ffb\u8bd1",
   reversePrompt: "\u53cd\u63a8\u63d0\u793a\u8bcd",
   imageToImageHint: "\u8bf7\u5148\u628a\u4e00\u5f20\u6216\u591a\u5f20\u56fe\u7247\u8282\u70b9\u7684 OUT \u8fde\u5230\u56fe\u751f\u56fe\u8282\u70b9\u7684 IN\u3002",
   textToImageHint: "\u8bf7\u5148\u5728\u6587\u751f\u56fe\u8282\u70b9\u91cc\u586b\u5199\u63d0\u793a\u8bcd\u3002",
+  translatePromptHint: "\u8bf7\u5148\u628a\u63d0\u793a\u8bcd\u8282\u70b9\u7684 OUT \u8fde\u5230\u7ffb\u8bd1\u8282\u70b9\u7684 IN\u3002",
+  promptTranslated: "\u63d0\u793a\u8bcd\u5df2\u7ffb\u8bd1",
+  translateDirection: "\u7ffb\u8bd1\u65b9\u5411",
   reversePromptHint: "\u8bf7\u5148\u628a\u56fe\u7247\u8282\u70b9\u7684 OUT \u8fde\u5230\u53cd\u63a8\u63d0\u793a\u8bcd\u8282\u70b9\u7684 IN\u3002",
   nodePromptPlaceholder: "\u5728\u8fd9\u91cc\u5199\u8be5\u8282\u70b9\u7684\u56fe\u751f\u56fe\u63d0\u793a\u8bcd...",
   textNodePlaceholder: "\u5728\u8fd9\u91cc\u5199\u8be5\u8282\u70b9\u8981\u8f93\u51fa\u7684\u63d0\u793a\u8bcd...",
+  translateNodePlaceholder: "\u8fd9\u91cc\u4f1a\u8f93\u51fa\u7ffb\u8bd1\u540e\u7684\u82f1\u6587\u79d1\u7814\u7ed8\u56fe\u63d0\u793a\u8bcd...",
   reverseNodePlaceholder: "\u8fd9\u91cc\u4f1a\u8f93\u51fa\u56fe\u7247\u53cd\u63a8\u5f97\u5230\u7684\u4fee\u56fe\u63d0\u793a\u8bcd...",
   nodeSize: "\u5c3a\u5bf8",
   nodeRatio: "\u6bd4\u4f8b",
@@ -116,6 +122,8 @@ const world = $("canvasWorld");
 const wrap = $("canvasWrap");
 const template = $("canvasItemTemplate");
 const linkLayer = $("linkLayer");
+const WORKFLOW_TEXT_NODE_WIDTH = 430;
+const WORKFLOW_TEXT_NODE_KINDS = new Set(["prompt", "prompt-translate", "text-to-image", "image-to-image", "reverse-prompt"]);
 
 const SIZE_MAP = {
   standard: {
@@ -488,11 +496,11 @@ function renderTextModelSelect(select, selectedModel) {
 }
 
 function nodeUsesModel(item) {
-  return ["text-to-image", "image-to-image", "image-edit", "upscale", "vector", "generated-image", "reverse-prompt"].includes(item?.nodeKind);
+  return ["text-to-image", "image-to-image", "image-edit", "upscale", "vector", "generated-image", "prompt-translate", "reverse-prompt"].includes(item?.nodeKind);
 }
 
 function nodeUsesTextModel(item) {
-  return item?.nodeKind === "reverse-prompt";
+  return ["prompt-translate", "reverse-prompt"].includes(item?.nodeKind);
 }
 
 function renderNodeModelSelect(select, item, selectedModel) {
@@ -504,7 +512,11 @@ function renderNodeModelSelect(select, item, selectedModel) {
 }
 
 function nodeHasEditableText(item) {
-  return ["prompt", "text-to-image", "image-to-image", "reverse-prompt", "note"].includes(item?.nodeKind) && item?.type !== "image" && item?.type !== "svg";
+  return ["prompt", "prompt-translate", "text-to-image", "image-to-image", "reverse-prompt", "note"].includes(item?.nodeKind) && item?.type !== "image" && item?.type !== "svg";
+}
+
+function nodeWidth(item) {
+  return WORKFLOW_TEXT_NODE_KINDS.has(item?.nodeKind) ? WORKFLOW_TEXT_NODE_WIDTH : (item?.width || 360);
 }
 
 function nodeAcceptsInput(item) {
@@ -579,7 +591,7 @@ function renderCanvas() {
     const node = template.content.firstElementChild.cloneNode(true);
     node.dataset.id = item.id;
     node.style.transform = `translate(${item.x}px, ${item.y}px)`;
-    node.style.width = `${item.width || 360}px`;
+    node.style.width = `${nodeWidth(item)}px`;
     node.classList.toggle("selected", item.id === state.selectedId);
     node.classList.toggle("no-input", !nodeAcceptsInput(item));
     node.querySelector(".item-title").textContent = item.title || item.type;
@@ -602,9 +614,14 @@ function renderCanvas() {
     if (nodeHasEditableText(item)) {
       const promptBox = document.createElement("textarea");
       promptBox.className = "node-prompt-input";
-      promptBox.placeholder = item.nodeKind === "reverse-prompt"
-        ? text.reverseNodePlaceholder
-        : (["image-to-image", "text-to-image"].includes(item.nodeKind) ? text.nodePromptPlaceholder : text.textNodePlaceholder);
+      promptBox.placeholder = text.textNodePlaceholder;
+      if (item.nodeKind === "reverse-prompt") {
+        promptBox.placeholder = text.reverseNodePlaceholder;
+      } else if (item.nodeKind === "prompt-translate") {
+        promptBox.placeholder = text.translateNodePlaceholder;
+      } else if (["image-to-image", "text-to-image"].includes(item.nodeKind)) {
+        promptBox.placeholder = text.nodePromptPlaceholder;
+      }
       promptBox.value = item.prompt || item.text || "";
       promptBox.addEventListener("pointerdown", (event) => event.stopPropagation());
       promptBox.addEventListener("input", (event) => {
@@ -639,6 +656,23 @@ function renderCanvas() {
         runButton.addEventListener("click", (event) => {
           event.stopPropagation();
           runImageToImage(item.id, runButton);
+        });
+        body.appendChild(runButton);
+      } else if (item.nodeKind === "prompt-translate") {
+        const sourceCount = promptInputSourcesForItem(item).length;
+        const sourceHint = document.createElement("p");
+        sourceHint.className = "node-source-count";
+        sourceHint.textContent = `\u8f93\u5165\u63d0\u793a\u8bcd\uff1a${sourceCount}`;
+        body.appendChild(translateOptionControls(item));
+        body.appendChild(sourceHint);
+        const runButton = document.createElement("button");
+        runButton.type = "button";
+        runButton.className = "node-run-btn";
+        runButton.textContent = "\u542f\u52a8\u7ffb\u8bd1";
+        runButton.addEventListener("pointerdown", (event) => event.stopPropagation());
+        runButton.addEventListener("click", (event) => {
+          event.stopPropagation();
+          runTranslatePrompt(item.id, runButton);
         });
         body.appendChild(runButton);
       } else if (item.nodeKind === "reverse-prompt") {
@@ -730,6 +764,7 @@ function renderCanvas() {
     node.addEventListener("click", (event) => handleNodeLinkClick(event, item.id));
     node.addEventListener("pointerdown", (event) => startItemDrag(event, item.id));
     world.appendChild(node);
+    item.height = Math.ceil(node.offsetHeight || item.height || 0) || item.height;
   }
   renderLinks();
 }
@@ -776,6 +811,17 @@ function imageOptionControls(item) {
     ["auto", "Auto"],
     ["opaque", "Opaque"],
     ["transparent", "Transparent"],
+  ], item));
+  return controls;
+}
+
+function translateOptionControls(item) {
+  const controls = document.createElement("div");
+  controls.className = "node-generation-options";
+  controls.appendChild(optionField(text.translateDirection, "translationDirection", item?.translationDirection || "auto", [
+    ["auto", "Auto"],
+    ["zh-en", "\u4e2d\u8bd1\u82f1"],
+    ["en-zh", "\u82f1\u8bd1\u4e2d"],
   ], item));
   return controls;
 }
@@ -828,15 +874,19 @@ function handlePortClick(event, itemId, port) {
 
 function addItem(item) {
   const id = item.id || `item_${crypto.randomUUID()}`;
+  const normalized = {
+    ...item,
+    id,
+    nodeKind: item.nodeKind || item.type || "node",
+  };
+  normalized.width = nodeWidth(normalized);
   state.items.push({
     id,
-    x: item.x ?? Math.round(60 - state.viewport.x),
-    y: item.y ?? Math.round(60 - state.viewport.y),
-    width: item.width || 360,
-    height: item.height,
-    model: item.model || (nodeUsesTextModel(item) ? state.settings?.text_model || "gpt-4.1-mini" : (nodeUsesModel(item) ? state.settings?.image_model || "gpt-image-2" : "")),
-    nodeKind: item.nodeKind || item.type || "node",
-    ...item,
+    x: normalized.x ?? Math.round(60 - state.viewport.x),
+    y: normalized.y ?? Math.round(60 - state.viewport.y),
+    height: normalized.height,
+    model: normalized.model || (nodeUsesTextModel(normalized) ? state.settings?.text_model || "gpt-4.1-mini" : (nodeUsesModel(normalized) ? state.settings?.image_model || "gpt-image-2" : "")),
+    ...normalized,
     id,
   });
   state.selectedId = id;
@@ -886,6 +936,17 @@ function promptSourceForItem(item) {
   if ((item.prompt || item.text || "").trim()) return (item.prompt || item.text).trim();
   const source = linkedInputItems(item.id).find((entry) => !entry.image_id && (entry.prompt || entry.text || "").trim());
   return source ? (source.prompt || source.text || "").trim() : "";
+}
+
+function promptInputSourcesForItem(item) {
+  if (!item) return [];
+  return linkedInputItems(item.id).filter((entry) => !entry.image_id && (entry.prompt || entry.text || "").trim());
+}
+
+function inputPromptForItem(item) {
+  const source = promptInputSourcesForItem(item)[0];
+  if (source) return (source.prompt || source.text || "").trim();
+  return (item?.prompt || item?.text || "").trim();
 }
 
 function updateSelectionPanel() {
@@ -941,7 +1002,7 @@ function portPoint(item, port) {
   if (portNode) {
     return elementCenterInWrap(portNode);
   }
-  const width = item.width || 360;
+  const width = nodeWidth(item);
   const height = node ? node.offsetHeight : (item.height || (item.type === "image" || item.type === "svg" ? 390 : 190));
   const worldX = item.x + (port === "out" ? width : 0);
   const worldY = item.y + height / 2;
@@ -1205,7 +1266,7 @@ $("rewritePromptBtn").addEventListener("click", async () => {
 });
 
 $("addPromptNoteBtn").addEventListener("click", () => {
-  addItem({ type: "note", nodeKind: "prompt", title: text.promptNote, text: $("promptOutput").value, x: -40, y: -180, width: 460 });
+  addItem({ type: "note", nodeKind: "prompt", title: text.promptNote, text: $("promptOutput").value, x: -40, y: -180, width: WORKFLOW_TEXT_NODE_WIDTH });
 });
 
 $("openPresetBtn").addEventListener("click", async () => {
@@ -1276,7 +1337,7 @@ $("addPresetNodeBtn").addEventListener("click", () => {
     return;
   }
   $("promptOutput").value = prompt;
-  addItem({ type: "note", nodeKind: "prompt", title: name, text: prompt, prompt, x: -60, y: -120, width: 430 });
+  addItem({ type: "note", nodeKind: "prompt", title: name, text: prompt, prompt, x: -60, y: -120, width: WORKFLOW_TEXT_NODE_WIDTH });
   $("presetStatus").textContent = text.presetAdded;
 });
 
@@ -1286,7 +1347,7 @@ $("presetSearchInput")?.addEventListener("input", () => {
 });
 
 $("addPromptNodeBtn").addEventListener("click", () => {
-  addItem({ type: "note", nodeKind: "prompt", title: text.promptNode, text: $("promptOutput").value || text.promptNeeded, x: -60, y: -120, width: 430 });
+  addItem({ type: "note", nodeKind: "prompt", title: text.promptNode, text: $("promptOutput").value || text.promptNeeded, x: -60, y: -120, width: WORKFLOW_TEXT_NODE_WIDTH });
 });
 
 $("addT2INodeBtn").addEventListener("click", () => {
@@ -1299,6 +1360,10 @@ $("addI2INodeBtn").addEventListener("click", () => {
 
 $("addReversePromptNodeBtn").addEventListener("click", () => {
   addReversePromptPlaceholder();
+});
+
+$("addTranslatePromptNodeBtn").addEventListener("click", () => {
+  addTranslatePromptPlaceholder();
 });
 
 $("toolbarRatio").addEventListener("change", updateToolbarSizeLabel);
@@ -1461,6 +1526,34 @@ async function runReversePrompt(targetId, triggerButton) {
     target.text = data.prompt.prompt;
     target.title = data.prompt.title || text.reversePrompt;
     setStatus(data.prompt.provider_note || text.promptDone);
+  } catch (error) {
+    setStatus(error.message);
+  } finally {
+    setBusy(button, false);
+    renderCanvas();
+    updateSelectionPanel();
+  }
+}
+
+async function runTranslatePrompt(targetId, triggerButton) {
+  const target = itemById(targetId) || selectedItem();
+  const prompt = inputPromptForItem(target);
+  if (!prompt) {
+    setStatus(text.translatePromptHint);
+    return;
+  }
+  const button = triggerButton;
+  setBusy(button, true, text.processing);
+  try {
+    const data = await api("/api/prompts/translate", {
+      prompt,
+      direction: target?.translationDirection || "auto",
+      model: target?.model || state.settings?.text_model,
+    });
+    target.prompt = data.prompt.prompt;
+    target.text = data.prompt.prompt;
+    target.title = text.translatePromptNode;
+    setStatus(data.prompt.provider_note || text.promptTranslated);
   } catch (error) {
     setStatus(error.message);
   } finally {
@@ -1633,7 +1726,7 @@ function addTextToImagePlaceholder() {
     imageBackground: "auto",
     x: 70,
     y: -90,
-    width: 390,
+    width: WORKFLOW_TEXT_NODE_WIDTH,
   });
 }
 
@@ -1653,7 +1746,7 @@ function addImageToImagePlaceholder() {
     imageBackground: "auto",
     x: 120,
     y: 120,
-    width: 360,
+    width: WORKFLOW_TEXT_NODE_WIDTH,
   });
 }
 
@@ -1667,7 +1760,22 @@ function addReversePromptPlaceholder() {
     model: state.settings?.text_model || "gpt-4.1-mini",
     x: 120,
     y: 280,
-    width: 380,
+    width: WORKFLOW_TEXT_NODE_WIDTH,
+  });
+}
+
+function addTranslatePromptPlaceholder() {
+  addItem({
+    type: "note",
+    nodeKind: "prompt-translate",
+    title: text.translatePromptNode,
+    text: "",
+    prompt: "",
+    model: state.settings?.text_model || "gpt-4.1-mini",
+    translationDirection: "auto",
+    x: 120,
+    y: 440,
+    width: WORKFLOW_TEXT_NODE_WIDTH,
   });
 }
 
@@ -2157,7 +2265,7 @@ $("upscaleBtn").addEventListener("click", () => imageOperation("/api/images/upsc
 $("vectorizeBtn").addEventListener("click", () => imageOperation("/api/images/vectorize", text.vector));
 
 $("relayoutBtn").addEventListener("click", async () => {
-  const data = await api("/api/canvas/relayout", { items: state.items, mode: "grid" });
+  const data = await api("/api/canvas/relayout", { items: state.items, links: state.links, mode: "grid" });
   state.items = data.items;
   renderCanvas();
   setStatus(text.relayoutDone);
