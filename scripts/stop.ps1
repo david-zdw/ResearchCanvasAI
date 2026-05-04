@@ -2,6 +2,7 @@ $ErrorActionPreference = "Continue"
 
 $Root = Split-Path -Parent $PSScriptRoot
 $Python = Join-Path $Root ".local-python\python\python.exe"
+$Pythonw = Join-Path $Root ".local-python\python\pythonw.exe"
 $PidFile = Join-Path $Root "data\server.pid"
 
 if (-not (Test-Path $PidFile)) {
@@ -12,7 +13,8 @@ if (-not (Test-Path $PidFile)) {
 try {
     $savedPid = [int](Get-Content -Path $PidFile -Raw)
     $process = Get-Process -Id $savedPid -ErrorAction SilentlyContinue
-    if ($process -and $process.Path -eq $Python) {
+    $validServerPaths = @($Python, $Pythonw)
+    if ($process -and $validServerPaths -contains $process.Path) {
         Stop-Process -Id $savedPid -Force
         Write-Host "Stopped Research Canvas AI server: $savedPid"
     } else {
