@@ -3345,3 +3345,74 @@ textarea:focus {
 .right-panel #captionList {
   min-height: 86px;
 }
+
+/* Keep long uploaded-paper metadata from pushing the left workflow controls off-screen. */
+.left-panel {
+  overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+}
+
+.left-panel .paper-card {
+  max-height: clamp(150px, 24vh, 230px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.left-panel .paper-card h2 {
+  display: -webkit-box;
+  margin-bottom: 6px;
+  overflow: hidden;
+  font-size: 13px;
+  line-height: 1.28;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.left-panel .paper-card p {
+  display: -webkit-box;
+  margin: 0 0 8px;
+  overflow: hidden;
+  font-size: 12px;
+  line-height: 1.36;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.left-panel .paper-card .keyword-list {
+  max-height: 78px;
+  overflow-y: auto;
+  padding-right: 2px;
+}
+
+.left-panel .paper-card .keyword-list span {
+  padding: 3px 8px;
+  font-size: 10px;
+  line-height: 1.2;
+}
+
+/* Caption candidates can be long; keep hover stable and text readable. */
+.right-panel .caption-list {
+  align-content: start;
+  gap: 9px;
+  overflow-x: hidden;
+}
+
+.right-panel .caption-list button {
+  display: block;
+  width: 100%;
+  min-height: auto;
+  height: auto;
+  padding: 10px 12px;
+  overflow: visible;
+  line-height: 1.42;
+  text-align: left;
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  transform: none;
+}
+
+.right-panel .caption-list button:hover {
+  transform: none;
+}

@@ -16,7 +16,7 @@ from .services.image_provider import edit_image, generate_image, upscale_image
 from .services.openai_compat import get_json
 from .services.paper_reader import analyze_paper, extract_text
 from .services.prompting import generate_prompt, improve_prompt, reverse_image_prompt, translate_prompt
-from .store import get, load_state, new_id, now_iso, save_state, upsert
+from .store import get, load_saved_prompt_presets, load_state, new_id, now_iso, save_saved_prompt_presets, upsert
 
 
 PROMPT_LIBRARY_SOURCE = Path(r"C:\Users\David\Documents\Codex\2026-04-26\new-chat-2\科研AI绘图提示词整理.md")
@@ -195,15 +195,35 @@ def _load_prompt_library_presets() -> list[dict[str, Any]]:
     return filtered or _fallback_prompt_presets()
 
 
-def _seed_prompt_presets(state: dict[str, Any]) -> dict[str, Any]:
-    if state.get("prompt_preset_library_seeded"):
-        return state
-    existing = state.setdefault("prompt_presets", {})
-    for preset in _load_prompt_library_presets():
-        existing.setdefault(preset["id"], preset)
-    state["prompt_preset_library_seeded"] = True
-    save_state(state)
-    return state
+def _built_in_prompt_presets_by_id() -> dict[str, dict[str, Any]]:
+    presets = [_normalize_prompt_preset(preset) for preset in _load_prompt_library_presets()]
+    return {preset["id"]: preset for preset in presets}
+
+
+def _merged_prompt_presets_by_id() -> dict[str, dict[str, Any]]:
+    merged = _built_in_prompt_presets_by_id()
+    for preset_id, preset in load_saved_prompt_presets().items():
+        if preset.get("_deleted"):
+            merged.pop(preset_id, None)
+            continue
+        merged[preset_id] = _normalize_prompt_preset(preset, default_source="custom")
+    return merged
+
+
+def _normalize_prompt_preset(preset: dict[str, Any], default_source: str = "library") -> dict[str, Any]:
+    now = now_iso()
+    normalized = dict(preset)
+    normalized.setdefault("id", new_id("preset"))
+    normalized.setdefault("name", "Untitled preset")
+    normalized.setdefault("prompt", "")
+    normalized.setdefault("category", "未分类")
+    normalized.setdefault("reference_image", "")
+    normalized.setdefault("keywords", [])
+    normalized.setdefault("source", default_source)
+    normalized.setdefault("created_at", now)
+    normalized.setdefault("updated_at", normalized.get("created_at", now))
+    normalized["keywords"] = _keyword_list(normalized.get("keywords", []))
+    return normalized
 
 
 def upload_paper(files: list[UploadedFile]) -> dict[str, Any]:
@@ -444,17 +464,7 @@ def load_canvas(canvas_id: str) -> dict[str, Any]:
 
 
 def list_prompt_presets() -> dict[str, Any]:
-    state = _seed_prompt_presets(load_state())
-    presets = state.setdefault("prompt_presets", {})
-    changed = False
-    for preset in presets.values():
-        if not preset.get("category"):
-            preset["category"] = "模板" if preset.get("id") in {"preset_schematic", "preset_graphical_abstract"} else "未分类"
-            changed = True
-        preset.setdefault("reference_image", "")
-        preset["keywords"] = _keyword_list(preset.get("keywords", []))
-    if changed:
-        save_state(state)
+    presets = _merged_prompt_presets_by_id()
     ordered = list(presets.values())
     ordered.sort(
         key=lambda item: (
@@ -475,7 +485,8 @@ def save_prompt_preset(payload: dict[str, Any]) -> dict[str, Any]:
     category = str(payload.get("category", "")).strip() or "未分类"
     reference_image = str(payload.get("reference_image", "")).strip()
     keywords = _keyword_list(payload.get("keywords", []))
-    existing = get("prompt_presets", preset_id) or {}
+    saved_presets = load_saved_prompt_presets()
+    existing = saved_presets.get(preset_id) or _merged_prompt_presets_by_id().get(preset_id, {})
     preset = {
         "id": preset_id,
         "name": name,
@@ -483,19 +494,24 @@ def save_prompt_preset(payload: dict[str, Any]) -> dict[str, Any]:
         "prompt": prompt,
         "reference_image": reference_image,
         "keywords": keywords,
-        "source": existing.get("source", "custom"),
+        "source": "custom",
         "created_at": existing.get("created_at") or now_iso(),
         "updated_at": now_iso(),
     }
-    upsert("prompt_presets", preset)
+    saved_presets[preset_id] = preset
+    save_saved_prompt_presets(saved_presets)
     return {"preset": preset, **list_prompt_presets()}
 
 
 def delete_prompt_preset(payload: dict[str, Any]) -> dict[str, Any]:
-    preset_id = payload.get("id")
-    state = load_state()
-    state.setdefault("prompt_presets", {}).pop(preset_id, None)
-    save_state(state)
+    preset_id = str(payload.get("id") or "")
+    saved_presets = load_saved_prompt_presets()
+    built_ins = _built_in_prompt_presets_by_id()
+    if preset_id in built_ins:
+        saved_presets[preset_id] = {"id": preset_id, "_deleted": True, "updated_at": now_iso()}
+    else:
+        saved_presets.pop(preset_id, None)
+    save_saved_prompt_presets(saved_presets)
     return list_prompt_presets()
 
 

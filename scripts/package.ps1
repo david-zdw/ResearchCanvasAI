@@ -41,38 +41,6 @@ New-Item -ItemType Directory -Force (Join-Path $AppDir "data\assets") | Out-Null
 New-Item -ItemType Directory -Force (Join-Path $AppDir "data\logs") | Out-Null
 New-Item -ItemType Directory -Force (Join-Path $AppDir "data\uploads") | Out-Null
 
-$SourceState = Join-Path $Root "data\state.json"
-$TargetState = Join-Path $AppDir "data\state.json"
-$Python = Join-Path $Root ".local-python\python\python.exe"
-if ((Test-Path $SourceState) -and (Test-Path $Python)) {
-    $script = @"
-import json
-import sys
-from pathlib import Path
-
-source = Path(sys.argv[1])
-target = Path(sys.argv[2])
-state = json.loads(source.read_text(encoding="utf-8-sig"))
-clean = {
-    "papers": {},
-    "images": {},
-    "canvases": {},
-    "prompt_presets": state.get("prompt_presets", {}),
-    "prompt_preset_library_seeded": state.get("prompt_preset_library_seeded", True),
-}
-target.write_text(json.dumps(clean, ensure_ascii=False, indent=2), encoding="utf-8")
-"@
-    $script | & $Python - $SourceState $TargetState
-} else {
-    @{
-        papers = @{}
-        images = @{}
-        canvases = @{}
-        prompt_presets = @{}
-        prompt_preset_library_seeded = $false
-    } | ConvertTo-Json -Depth 10 | Set-Content -LiteralPath $TargetState -Encoding UTF8
-}
-
 Get-ChildItem -LiteralPath $AppDir -Recurse -Directory -Filter "__pycache__" | Remove-Item -Recurse -Force
 Get-ChildItem -LiteralPath $AppDir -Recurse -File |
     Where-Object { $_.Extension -in @(".pyc", ".pyo") } |
@@ -87,5 +55,5 @@ Write-Host "Portable package created:"
 Write-Host $AppDir
 Write-Host $ZipPath
 Write-Host ""
-Write-Host "Note: .env, logs, uploads, generated assets, and private work history were not included."
-Write-Host "Prompt presets were included in data\state.json."
+Write-Host "Note: .env, local prompt edits, logs, uploads, generated assets, and private work history were not included."
+Write-Host "Built-in prompt presets are included in app\prompt_presets_seed.json."
